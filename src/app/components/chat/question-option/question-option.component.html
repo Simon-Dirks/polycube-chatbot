@@ -1,0 +1,10 @@
+<ion-button
+        expand="block"
+        color="light"
+        class="ion-text-wrap"
+        (click)="questionService.askQuestion(question)"
+        [disabled]="questionService.questionHasBeenAsked(question.id)"
+        *ngIf="question">
+    <span>{{getFilteredWordString()[0]}}
+        <strong>{{getFilteredWordString()[1]}}</strong>{{getFilteredWordString()[2]}}</span>
+</ion-button>

@@ -1,0 +1,45 @@
+<app-header-bar [pageTitle]="'Chat'"></app-header-bar>
+
+<ion-content>
+    <!-- Chat Messages -->
+    <div class="chat-container">
+        <div class="chat-messages" #chatMessages>
+            <ion-grid>
+                <ion-row *ngFor="let chatMessage of chat.chatMessages.getValue(); let messageIdx = index">
+                    <ion-col>
+                        <app-chat-message-bubble [messageIdx]="messageIdx" [message]="chatMessage">
+                        </app-chat-message-bubble>
+                    </ion-col>
+                </ion-row>
+                <ion-row *ngIf="chat.typingBotMessage.getValue()">
+                    <ion-col>
+                        <div class="chat-message-bubble bot-chat-message-bubble">
+                            <ion-spinner name="dots"></ion-spinner>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+
+        <!-- Question Input -->
+        <div class="question-input-container">
+            <ion-searchbar [(ngModel)]="questions.filterInput" placeholder="Filter questions"></ion-searchbar>
+
+            <div class="questions-list">
+                <p class="ion-text-center" *ngIf="questions.getAllFilteredQuestions().length === 0">
+                    <em>
+                        No questions found...
+                    </em>
+                </p>
+                <app-question-option *ngFor="let question of questions.getAllFilteredQuestions()"
+                                     [question]="question">
+                </app-question-option>
+            </div>
+        </div>
+    </div>
+
+
+</ion-content>
+
+
+

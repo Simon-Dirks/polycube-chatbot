@@ -1,0 +1,33 @@
+.question-input-container {
+  background: lightgrey;
+}
+
+.questions-list {
+  max-height: 150px;
+  overflow-y: scroll;
+}
+
+.chat-messages {
+  padding: 0 10px;
+  flex-grow: 1;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+ion-spinner {
+  color: white;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.highlighted-questions {
+  padding: 10px 10px 0;
+}
+
+ion-searchbar {
+  --box-shadow: none;
+}

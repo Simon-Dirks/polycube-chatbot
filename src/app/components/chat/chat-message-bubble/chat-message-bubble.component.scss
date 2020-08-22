@@ -1,0 +1,50 @@
+.chat-message-bubble {
+  padding: 15px 15px 0 15px;
+  background: purple;
+  border-radius: 10px;
+  color: white;
+  max-width: 90%;
+  min-width: 15%;
+  float: left;
+}
+
+.bot-chat-message-bubble {
+}
+
+.chat-author-image {
+  //width: 50px;
+  height: 50px;
+  float: left;
+}
+
+.chat-author {
+  margin-bottom: 15px;
+}
+
+.chat-author-name {
+  padding-top: 7px;
+}
+
+.chat-source-url {
+  color: white;
+}
+
+.user-chat-message-bubble {
+  float: right;
+  background: darkcyan;
+  min-width: 0%;
+}
+
+.chat-message-img {
+  max-height: 250px;
+  //margin-top: 35px;
+  border-radius: 2px;
+
+  display: inherit;
+}
+
+.chat-source-role {
+  font-size: 14px;
+  position: relative;
+  top: 2px;
+}

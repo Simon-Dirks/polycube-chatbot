@@ -1,0 +1,41 @@
+<div [ngClass]="['chat-message-bubble',
+                message.sentByBot ? 'bot-chat-message-bubble' : 'user-chat-message-bubble']">
+
+    <!-- Source / author -->
+    <div class="chat-author" *ngIf="message.sentByBot && message.source && message.source.name">
+        <a [href]="message.source.url"
+           class="chat-source-url"
+           target="_blank"
+           *ngIf="message.source.url">
+            <img [src]="'/assets/img/sources/' + (message.source.imageUrl ? message.source.imageUrl : 'unknown.png')"
+                 alt="{{message.source.name}} Image"
+                 class="chat-author-image ion-margin-end">
+        </a>
+        <img [src]="'/assets/img/sources/' + (message.source.imageUrl ? message.source.imageUrl : 'unknown.png')"
+             alt="{{message.source.name}} Image"
+             class="chat-author-image ion-margin-end"
+             *ngIf="!message.source.url">
+
+        <p class="ion-no-margin chat-author-name">
+            <a [href]="message.source.url"
+               class="chat-source-url"
+               target="_blank"
+               *ngIf="message.source.url">
+                <strong>{{message.source.name}}</strong>
+            </a>
+            <strong *ngIf="!message.source.url">{{message.source.name}}</strong><br/>
+            <em class="chat-source-role"> {{message.source.role}}</em>
+        </p>
+    </div>
+
+    <div>
+        <img src="{{message.imageUrl}}" alt="Chat message image"
+             class="ion-margin-bottom chat-message-img"
+             *ngIf="message.imageUrl && messageIdx === 1"/>
+
+        <p class="ion-no-margin ion-margin-bottom"
+           *ngFor="let text of message.messageText.split('|')">
+            {{text}}
+        </p>
+    </div>
+</div>
