@@ -12,37 +12,71 @@ export class ObjectRecognitionComponent implements OnInit, AfterViewInit {
     @ViewChild('webcam') webcamElem;
     mobileNet;
     classifier;
-    loaded = false;
+    loadingModel = true;
+    readonly CLASSES = ['Uke', 'Guitar'];
 
     constructor() {
     }
 
     ngOnInit() {
         this.loadModel().then(() => {
-            // this.startClassifierLoop();
+            this.trainModel();
+            this.startClassifierLoop();
         });
     }
-
 
     ngAfterViewInit(): void {
         this.initWebcamStream();
     }
 
-    async predict() {
-        const webcam = await tf.data.webcam(this.webcamElem.nativeElement);
+    public isLoading() {
+        return this.loadingModel;
+    }
 
+    async loadModel() {
+        tf.getBackend();
+        this.mobileNet = await mobilenet.load();
+        this.classifier = knnClassifier.create();
+        this.loadingModel = false;
+    }
+
+    trainModel() {
+        const ukeDir = '/assets/img/classes/uke/';
+        const guitarDir = '/assets/img/classes/guitar/';
+
+        for (let i = 0; i <= 10; i++) {
+            this.trainModelByImageUrl(0, ukeDir + i.toString() + '.jpeg');
+            this.trainModelByImageUrl(1, guitarDir + i.toString() + '.jpeg');
+        }
+    }
+
+    trainModelByImageUrl(classId: number, imgUrl: string) {
+        // TODO: Load images from URL without adding them to the body?
+        const img = new Image();
+        img.src = imgUrl;
+        document.body.appendChild(img);
+        img.onload = () => {
+            const imgTensor: tf.Tensor = tf.browser.fromPixels(img, 3);
+            this.trainExample(classId, imgTensor);
+        };
+    }
+
+    async predict(): Promise<boolean> {
         if (this.classifier.getNumClasses() > 0) {
+            console.log('Predicting...');
+
+            // Get webcam image
+            const webcam = await tf.data.webcam(this.webcamElem.nativeElement);
             const img = await webcam.capture();
-            // console.log(img);
 
             // Get the activation from mobilenet from the webcam.
             const activation = this.mobileNet.infer(img, 'conv_preds');
+
             // Get the most likely class and confidence from the classifier module.
             const result = await this.classifier.predictClass(activation);
 
-            const classes = ['Uke', 'Guitar'];
             document.getElementById('console').innerText = `
-              prediction: ${classes[result.label]}\n
+              prediction: ${this.CLASSES[result.label]}\n
               probability: ${result.confidences[result.label]}
             `;
 
@@ -50,36 +84,11 @@ export class ObjectRecognitionComponent implements OnInit, AfterViewInit {
             img.dispose();
         } else {
             console.warn('Can not predict without training data.');
+            return Promise.resolve(false);
         }
-    }
 
-    //
-    // async startClassifierLoop() {
-    //     const webcam = await tf.data.webcam(this.webcamElem.nativeElement);
-    //
-    //     while (true) {
-    //         if (this.classifier.getNumClasses() > 0) {
-    //             const img = await webcam.capture();
-    //             // console.log(img);
-    //
-    //             // Get the activation from mobilenet from the webcam.
-    //             const activation = this.mobileNet.infer(img, 'conv_preds');
-    //             // Get the most likely class and confidence from the classifier module.
-    //             const result = await this.classifier.predictClass(activation);
-    //
-    //             const classes = ['Uke', 'Guitar'];
-    //             document.getElementById('console').innerText = `
-    //       prediction: ${classes[result.label]}\n
-    //       probability: ${result.confidences[result.label]}
-    //     `;
-    //
-    //             // Dispose the tensor to release the memory.
-    //             img.dispose();
-    //         }
-    //
-    //         await tf.nextFrame();
-    //     }
-    // }
+        return Promise.resolve(true);
+    }
 
     initWebcamStream() {
         if (navigator.mediaDevices.getUserMedia) {
@@ -88,34 +97,30 @@ export class ObjectRecognitionComponent implements OnInit, AfterViewInit {
                     this.webcamElem.nativeElement.srcObject = stream;
                 })
                 .catch((err) => {
-                    console.log('Something went wrong!');
+                    console.error('Something went wrong while initializing the webcam stream.', err);
                 });
         }
     }
 
-    async loadModel() {
-        tf.getBackend();
-        this.mobileNet = await mobilenet.load();
-        this.classifier = knnClassifier.create();
-        this.loaded = true;
-        console.log(this.mobileNet, this.classifier);
-    }
-
-    async addExample(classId: number) {
-        // Capture an image from the web camera.
-        const webcam = await tf.data.webcam(this.webcamElem.nativeElement);
-        const img = await webcam.capture();
-
+    async trainExample(classId: number, imgTensor: tf.Tensor): Promise<boolean> {
         // Get the intermediate activation of MobileNet 'conv_preds' and pass that
         // to the KNN classifier.
-        const activation = this.mobileNet.infer(img, true);
+        const activation = this.mobileNet.infer(imgTensor, true);
 
         // Pass the intermediate activation to the classifier.
         this.classifier.addExample(activation, classId);
 
         // Dispose the tensor to release the memory.
-        img.dispose();
+        imgTensor.dispose();
 
-        console.log('Successfully added example for class', classId);
+        console.log('Successfully added example for class', this.CLASSES[classId]);
+        return Promise.resolve(true);
+    }
+
+    async startClassifierLoop() {
+        setInterval(async () => {
+            await this.predict();
+            await tf.nextFrame();
+        }, 500);
     }
 }
