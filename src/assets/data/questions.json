@@ -33,6 +33,24 @@
         "messageText": "But I won't",
         "sourceId": "lotte-matola"
       }
+    ],
+    "followUpQuestions": [
+      {
+        "id": "q3",
+        "questionAsked": {
+          "messageText": "Followup to Q2?"
+        },
+        "questionAnswers": [
+          {
+            "messageText": "Yes, let's talk more about q2!",
+            "sourceId": "simon-dirks"
+          },
+          {
+            "messageText": "hmm ok!",
+            "sourceId": "lotte-matola"
+          }
+        ]
+      }
     ]
   }
 ]

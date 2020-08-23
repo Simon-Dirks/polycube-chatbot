@@ -4,4 +4,5 @@ export interface QuestionModel {
     id: string;
     questionAsked: ChatMessageModel;
     questionAnswers: ChatMessageModel[];
+    followUpQuestions?: QuestionModel[];
 }

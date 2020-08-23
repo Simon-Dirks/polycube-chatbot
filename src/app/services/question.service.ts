@@ -3,6 +3,7 @@ import {ChatService} from './chat.service';
 import {BehaviorSubject} from 'rxjs';
 import {QuestionModel} from '../models/question.model';
 import {HttpClient} from '@angular/common/http';
+import {environment} from "../../environments/environment";
 
 @Injectable({
     providedIn: 'root',
@@ -34,16 +35,33 @@ export class QuestionService {
         return filteredQuestions;
     }
 
+    private addQuestion(question: QuestionModel) {
+        const allQuestions = this.allQuestions.getValue();
+        allQuestions.push(question);
+        const askedQuestions = allQuestions.filter(q => this.questionHasBeenAsked(q.id));
+        const unaskedQuestions = allQuestions.filter(q => !this.questionHasBeenAsked(q.id));
+        this.allQuestions.next(unaskedQuestions.concat(askedQuestions));
+    }
+
     public async askQuestion(question: QuestionModel) {
         question.questionAnswers.forEach(answer => {
             answer.sentByBot = true;
         });
         this.chat.sendMessage(question.questionAsked);
         this.chat.sendMessages(question.questionAnswers);
-
         this.filterInput = '';
 
         this.askedQuestionIds.push(question.id);
+
+        question.followUpQuestions.forEach(q => {
+            this.addQuestion(q);
+        });
+        // const timeBeforeShowingFollowupQuestions = environment.delayBetweenMessages * (question.questionAnswers.length + 0.5);
+        // setTimeout(() => {
+        //     question.followUpQuestions.forEach(q => {
+        //         this.addQuestion(q);
+        //     });
+        // }, timeBeforeShowingFollowupQuestions);
     }
 
     questionHasBeenAsked(id: string) {
