@@ -10,8 +10,8 @@ import {QuestionService} from '../../services/question.service';
 export class ChatComponent implements OnInit {
     @ViewChild('chatMessages', {static: false}) chatMessagesElRef: ElementRef;
 
-    constructor(private chat: ChatService,
-                private questions: QuestionService) {
+    constructor(public chat: ChatService,
+                public questions: QuestionService) {
     }
 
     ngOnInit() {

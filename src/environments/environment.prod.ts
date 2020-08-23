@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  delayBetweenMessages: 1000 // ms
 };

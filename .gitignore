@@ -1,6 +1,8 @@
 # Specifies intentionally untracked files to ignore when using Git
 # http://git-scm.com/docs/gitignore
 
+.firebaserc
+.firebase/hosting.d3d3.cache
 *~
 *.sw[mnpcod]
 .tmp

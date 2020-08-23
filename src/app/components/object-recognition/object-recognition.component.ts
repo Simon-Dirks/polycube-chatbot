@@ -121,6 +121,6 @@ export class ObjectRecognitionComponent implements OnInit, AfterViewInit {
         setInterval(async () => {
             await this.predict();
             await tf.nextFrame();
-        }, 500);
+        }, 1000);
     }
 }
