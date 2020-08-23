@@ -2,6 +2,8 @@ import {NgModule} from '@angular/core';
 import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 import {ChatComponent} from './chat/chat.component';
 import {ChatModule} from './chat/chat.module';
+import {ObjectRecognitionComponent} from './object-recognition/object-recognition.component';
+import {ObjectRecognitionModule} from './object-recognition/object-recognition.module';
 
 const routes: Routes = [
     {
@@ -9,8 +11,12 @@ const routes: Routes = [
         component: ChatComponent
     },
     {
+        path: 'objects',
+        component: ObjectRecognitionComponent
+    },
+    {
         path: '',
-        redirectTo: 'chat',
+        redirectTo: 'objects',
         pathMatch: 'full'
     },
 ];
@@ -18,7 +24,8 @@ const routes: Routes = [
 @NgModule({
     imports: [
         RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules}),
-        ChatModule
+        ChatModule,
+        ObjectRecognitionModule
     ],
     exports: [RouterModule]
 })

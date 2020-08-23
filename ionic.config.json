@@ -1,5 +1,7 @@
 {
   "name": "Museum Perspectives",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

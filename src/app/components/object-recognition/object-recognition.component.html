@@ -1,0 +1,18 @@
+<ion-content>
+    <div id="console"></div>
+
+    <video autoplay playsinline muted #webcam></video>
+
+    <div *ngIf="!loaded">
+        <ion-spinner></ion-spinner>
+        <span><em>Loading model...</em></span>
+    </div>
+
+    <div>
+        <ion-button [disabled]="!loaded" (click)="addExample(0)">Uke</ion-button>
+        <ion-button [disabled]="!loaded" (click)="addExample(1)">Guitar</ion-button>
+        <ion-button [disabled]="!loaded" color="success" (click)="predict()">Predict</ion-button>
+    </div>
+
+</ion-content>
+
