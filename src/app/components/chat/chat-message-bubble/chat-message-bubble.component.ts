@@ -1,5 +1,6 @@
 import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 import {ChatMessageModel} from '../../../models/chat-message.model';
+import {SourceService} from '../../../services/source.service';
 
 @Component({
     selector: 'app-chat-message-bubble',
@@ -11,10 +12,13 @@ export class ChatMessageBubbleComponent implements OnInit {
     @Input() messageIdx: number;
     @Input() message: ChatMessageModel;
 
-    constructor() {
+    constructor(private sources: SourceService) {
     }
 
     ngOnInit() {
+        if (this.message.sourceId && !this.message.source) {
+            this.message.source = this.sources.getSourceById(this.message.sourceId);
+        }
     }
 
 }

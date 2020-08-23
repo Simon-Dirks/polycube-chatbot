@@ -1,0 +1,38 @@
+[
+  {
+    "id": "q1",
+    "questionAsked": {
+      "messageText": "What is Question 1?"
+    },
+    "questionAnswers": [
+      {
+        "messageText": "Good question!",
+        "sourceId": "simon-dirks"
+      },
+      {
+        "messageText": "I don't really know",
+        "sourceId": "simon-dirks"
+      }
+    ]
+  },
+  {
+    "id": "q2",
+    "questionAsked": {
+      "messageText": "What is Question 2?"
+    },
+    "questionAnswers": [
+      {
+        "messageText": "Even better question!",
+        "sourceId": "simon-dirks"
+      },
+      {
+        "messageText": "I could tell you more about this..",
+        "sourceId": "lotte-matola"
+      },
+      {
+        "messageText": "But I won't",
+        "sourceId": "lotte-matola"
+      }
+    ]
+  }
+]

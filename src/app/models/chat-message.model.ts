@@ -1,8 +1,9 @@
-import {ChatMessageSourceModel} from './chat-message-source.model';
+import {SourceModel} from './source.model';
 
 export interface ChatMessageModel {
-    sentByBot: boolean;
     messageText: string;
+    sentByBot?: boolean;
     imageUrl?: string;
-    source?: ChatMessageSourceModel;
+    sourceId?: string;
+    source?: SourceModel;
 }
