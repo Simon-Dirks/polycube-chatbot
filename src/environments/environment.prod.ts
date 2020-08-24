@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  timeDelayPerKeystroke: 1000 // ms
+  timeDelayPerKeystroke: 12, // ms
+  minDelayForMessage: 250 // ms
 };

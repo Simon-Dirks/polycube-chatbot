@@ -66,9 +66,6 @@ export class ObjectRecognitionService {
         const img = new Image();
         img.src = imageUrl;
 
-        // TODO: Load images from URL without adding them to the body?
-        document.body.appendChild(img);
-
         return new Promise((resolve, reject) => {
             img.onload = () => {
                 const imgTensor: tf.Tensor = tf.browser.fromPixels(img, 3);
