@@ -13,8 +13,7 @@ const {Camera, Filesystem, Storage} = Plugins;
 })
 export class CameraService {
 
-    constructor(private chatService: ChatService,
-                private objectRecognition: ObjectRecognitionService) {
+    constructor() {
     }
 
     async takePhoto(): Promise<CameraPhoto> {

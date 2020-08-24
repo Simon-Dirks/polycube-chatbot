@@ -10,8 +10,8 @@ export class ObjectRecognitionService {
     mobileNet;
     classifier;
     loadingModel = true;
-    amtTrainingExamplesBeingAdded = 0;
-    readonly CLASSES = ['De Peer', 'Ontmoeting', 'The Memory of the Woman-Child'];
+    amtTrainingExamplesBeingProcessed = 0;
+    readonly CLASSES = ['De Peer', 'The Memory of the Woman-Child', 'Ontmoeting'];
 
     constructor() {
         this.loadModel().then(() => {
@@ -28,26 +28,27 @@ export class ObjectRecognitionService {
     }
 
     trainModel() {
-        const dePeerDir = '/assets/img/classes/de-peer/';
-        const memoryWomanChildDir = '/assets/img/classes/the-memory-of-the-woman-child/';
-        const ontmoetingDir = '/assets/img/classes/ontmoeting/';
+        // Note: Has to match the order of CLASSES
+        const trainingDirs = ['/assets/img/classes/de-peer/',
+            '/assets/img/classes/the-memory-of-the-woman-child/',
+            '/assets/img/classes/ontmoeting/'];
 
-        this.amtTrainingExamplesBeingAdded++;
-        // for (let i = 0; i <= 10; i++) {
-        //     this.trainModelByImageUrl(0, dePeerDir + i.toString() + '.jpeg');
-        //     this.trainModelByImageUrl(1, memoryWomanChildDir + i.toString() + '.jpeg');
-        // }
-        //
-        // for (let i = 1; i <= 142; i++) {
-        //     let fileName = i.toString();
-        //     if (fileName.length < 2) {
-        //         fileName = '00' + fileName;
-        //     } else if (fileName.length < 3) {
-        //         fileName = '0' + fileName;
-        //     }
-        //     fileName = 'ezgif-frame-' + fileName + '.jpg';
-        //     this.trainModelByImageUrl(2, ontmoetingDir + fileName);
-        // }
+        for (let classId = 0; classId < 3; classId++) {
+            for (let i = 1; i <= 49; i++) {
+                this.amtTrainingExamplesBeingProcessed++;
+
+                let fileName = i.toString();
+                if (fileName.length < 2) {
+                    fileName = '00' + fileName;
+                } else if (fileName.length < 3) {
+                    fileName = '0' + fileName;
+                }
+                fileName = trainingDirs[classId] + 'ezgif-frame-' + fileName + '.jpg';
+
+                this.addTrainingExample(classId, fileName);
+            }
+        }
+
     }
 
     async addTrainingExample(classId: number, imgUrl: string): Promise<boolean> {
@@ -57,6 +58,7 @@ export class ObjectRecognitionService {
         imgTensor.dispose();
 
         console.log('Successfully added example for class', this.CLASSES[classId]);
+        this.amtTrainingExamplesBeingProcessed--;
         return Promise.resolve(true);
     }
 
@@ -90,10 +92,11 @@ export class ObjectRecognitionService {
 
         imgTensor.dispose();
 
-        console.log(`
+        alert(`
               prediction: ${this.CLASSES[result.label]}\n
               probability: ${result.confidences[result.label]}
             `);
+
         return Promise.resolve(this.CLASSES[result.label]);
     }
 }
