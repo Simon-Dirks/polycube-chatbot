@@ -2,52 +2,48 @@
   {
     "id": "q1",
     "questionAsked": {
-      "messageText": "What is Question 1?"
+      "messageText": "What is surrealism?"
     },
     "questionAnswers": [
       {
-        "messageText": "Good question!",
-        "sourceId": "simon-dirks"
-      },
-      {
-        "messageText": "I don't really know",
-        "sourceId": "simon-dirks"
+        "messageText": "Developed in Europe in the aftermath of World War I, the movement is best known for its juxtaposition of uncommon imagery and focus on the unconscious.",
+        "sourceId": "wikipedia"
       }
     ]
   },
   {
     "id": "q2",
     "questionAsked": {
-      "messageText": "What is Question 2?"
+      "messageText": "What did people think of De Peer?"
     },
     "questionAnswers": [
       {
-        "messageText": "Even better question!",
-        "sourceId": "simon-dirks"
+        "messageText": "I saw De Peer at the Stedelijk Museum in 1931. De Peer was completely incomprehensible, I remember being stumped by this strange figure.",
+        "sourceId": "marieke"
       },
       {
-        "messageText": "I could tell you more about this..",
-        "sourceId": "lotte-matola"
+        "messageText": "Looking back on the exhibition in the Stedelijk Museum, Moesman was far ahead of his time.",
+        "sourceId": "tim"
       },
       {
-        "messageText": "But I won't",
-        "sourceId": "lotte-matola"
+        "messageText": "Back then, a painting like this was considered completely taboo.",
+        "sourceId": "tim"
       }
     ],
     "followUpQuestions": [
       {
         "id": "q3",
         "questionAsked": {
-          "messageText": "Followup to Q2?"
+          "messageText": "Who was Johannes Moesman?"
         },
         "questionAnswers": [
           {
-            "messageText": "Yes, let's talk more about q2!",
-            "sourceId": "simon-dirks"
+            "messageText": "Johannes Moesman was the only Dutch artist to be formally ranked among the surrealists. ",
+            "sourceId": "maia"
           },
           {
-            "messageText": "hmm ok!",
-            "sourceId": "lotte-matola"
+            "messageText": "Moesman used surrealism as an opportunity to indulge his sexual fantasies on the canvas – with the excuse that the images were produced by the subconscious, for which he could not be held responsible.",
+            "sourceId": "maia"
           }
         ]
       }

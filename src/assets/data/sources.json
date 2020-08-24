@@ -1,14 +1,30 @@
 [
   {
-    "id": "simon-dirks",
-    "name": "Simon Dirks",
-    "url": "#",
-    "role": "Engineer"
+    "id": "wikipedia",
+    "name": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Surrealism",
+    "role": "Online Encyclopedia",
+    "imageUrl": "wikipedia.png"
   },
   {
-    "id": "lotte-matola",
-    "name": "Lotte Matola",
+    "id": "marieke",
+    "name": "Marieke van de Berg",
     "url": "#",
-    "role": "Consultant"
+    "role": "Art Critic",
+    "imageUrl": "marieke.png"
+  },
+  {
+    "id": "tim",
+    "name": "Tim Teunisse",
+    "url": "#",
+    "role": "Art History Student",
+    "imageUrl": "tim.png"
+  },
+  {
+    "id": "maia",
+    "name": "Maia Kenney",
+    "url": "#",
+    "role": "Assistant Curator",
+    "imageUrl": "maia-kenney.png"
   }
 ]

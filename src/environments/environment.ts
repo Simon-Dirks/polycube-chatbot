@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  delayBetweenMessages: 1000, // ms
+  timeDelayPerKeystroke: 12, // ms
+  minDelayForMessage: 250 // ms
 };
 
 /*

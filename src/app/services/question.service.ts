@@ -53,9 +53,12 @@ export class QuestionService {
 
         this.askedQuestionIds.push(question.id);
 
-        question.followUpQuestions.forEach(q => {
-            this.addQuestion(q);
-        });
+        if(question.followUpQuestions) {
+            question.followUpQuestions.forEach(q => {
+                this.addQuestion(q);
+            });
+        }
+
         // const timeBeforeShowingFollowupQuestions = environment.delayBetweenMessages * (question.questionAnswers.length + 0.5);
         // setTimeout(() => {
         //     question.followUpQuestions.forEach(q => {

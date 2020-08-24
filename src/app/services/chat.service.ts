@@ -25,12 +25,17 @@ export class ChatService {
 
     sendMessages(messages: ChatMessageModel[]) {
         this.typingBotMessage.next(true);
-        let timer = environment.delayBetweenMessages;
+        let timer = 0;
         let prevSourceId: string;
 
         // tslint:disable-next-line:prefer-for-of
         for (let messageIdx = 0; messageIdx < messages.length; messageIdx++) {
             const message = messages[messageIdx];
+            let timeToTypeMessage = environment.timeDelayPerKeystroke * message.messageText.length;
+            if (timeToTypeMessage < environment.minDelayForMessage) {
+                timeToTypeMessage = environment.minDelayForMessage;
+            }
+            timer += timeToTypeMessage;
 
             setTimeout(() => {
                 const sentMessage: ChatMessageModel = JSON.parse(JSON.stringify(message));
@@ -49,8 +54,6 @@ export class ChatService {
                     this.typingBotMessage.next(false);
                 }
             }, timer);
-
-            timer += 1000;
         }
 
     }
