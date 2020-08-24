@@ -23,6 +23,14 @@
 
         <!-- Question Input -->
         <div class="question-input-container">
+            <ion-button (click)="predictPhotoClass()"
+                        *ngIf="!questions.filterInput"
+                        class="photo-button"
+                        fill="clear"
+                        color="primary">
+                <ion-icon name="camera"></ion-icon>
+            </ion-button>
+
             <ion-searchbar [(ngModel)]="questions.filterInput" placeholder="Filter questions"></ion-searchbar>
 
             <div class="questions-list">

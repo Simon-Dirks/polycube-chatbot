@@ -1,6 +1,8 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {ChatService} from '../../services/chat.service';
 import {QuestionService} from '../../services/question.service';
+import {CameraService} from '../../services/camera.service';
+import {ObjectRecognitionService} from '../../services/object-recognition.service';
 
 @Component({
     selector: 'app-chat',
@@ -11,7 +13,9 @@ export class ChatComponent implements OnInit {
     @ViewChild('chatMessages', {static: false}) chatMessagesElRef: ElementRef;
 
     constructor(public chat: ChatService,
-                public questions: QuestionService) {
+                public questions: QuestionService,
+                public camera: CameraService,
+                public objectRecognition: ObjectRecognitionService) {
     }
 
     ngOnInit() {
@@ -24,6 +28,12 @@ export class ChatComponent implements OnInit {
         this.chat.typingBotMessage.subscribe(() => {
             this.scrollToBottom();
         });
+    }
+
+    async predictPhotoClass() {
+        const img = await this.camera.takePhoto();
+        const predictedClass = await this.objectRecognition.predictImageClass(img.webPath);
+        console.log(predictedClass);
     }
 
     scrollToBottom() {

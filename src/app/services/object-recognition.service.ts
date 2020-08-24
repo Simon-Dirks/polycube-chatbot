@@ -1,0 +1,99 @@
+import * as tf from '@tensorflow/tfjs';
+import * as mobilenet from '@tensorflow-models/mobilenet';
+import * as knnClassifier from '@tensorflow-models/knn-classifier';
+import {Injectable} from '@angular/core';
+
+@Injectable({
+    providedIn: 'root',
+})
+export class ObjectRecognitionService {
+    mobileNet;
+    classifier;
+    loadingModel = true;
+    amtTrainingExamplesBeingAdded = 0;
+    readonly CLASSES = ['De Peer', 'Ontmoeting', 'The Memory of the Woman-Child'];
+
+    constructor() {
+        this.loadModel().then(() => {
+            this.loadingModel = false;
+            this.trainModel();
+        });
+    }
+
+    async loadModel() {
+        tf.getBackend();
+        this.mobileNet = await mobilenet.load();
+        this.classifier = knnClassifier.create();
+        this.loadingModel = false;
+    }
+
+    trainModel() {
+        const dePeerDir = '/assets/img/classes/de-peer/';
+        const memoryWomanChildDir = '/assets/img/classes/the-memory-of-the-woman-child/';
+        const ontmoetingDir = '/assets/img/classes/ontmoeting/';
+
+        this.amtTrainingExamplesBeingAdded++;
+        // for (let i = 0; i <= 10; i++) {
+        //     this.trainModelByImageUrl(0, dePeerDir + i.toString() + '.jpeg');
+        //     this.trainModelByImageUrl(1, memoryWomanChildDir + i.toString() + '.jpeg');
+        // }
+        //
+        // for (let i = 1; i <= 142; i++) {
+        //     let fileName = i.toString();
+        //     if (fileName.length < 2) {
+        //         fileName = '00' + fileName;
+        //     } else if (fileName.length < 3) {
+        //         fileName = '0' + fileName;
+        //     }
+        //     fileName = 'ezgif-frame-' + fileName + '.jpg';
+        //     this.trainModelByImageUrl(2, ontmoetingDir + fileName);
+        // }
+    }
+
+    async addTrainingExample(classId: number, imgUrl: string): Promise<boolean> {
+        const imgTensor: tf.Tensor = await this.getTensorFromImageUrl(imgUrl);
+        const activation = this.mobileNet.infer(imgTensor, true);
+        this.classifier.addExample(activation, classId);
+        imgTensor.dispose();
+
+        console.log('Successfully added example for class', this.CLASSES[classId]);
+        return Promise.resolve(true);
+    }
+
+    async getTensorFromImageUrl(imageUrl: string): Promise<tf.Tensor> {
+        const img = new Image();
+        img.src = imageUrl;
+
+        // TODO: Load images from URL without adding them to the body?
+        document.body.appendChild(img);
+
+        return new Promise((resolve, reject) => {
+            img.onload = () => {
+                const imgTensor: tf.Tensor = tf.browser.fromPixels(img, 3);
+                resolve(imgTensor);
+            };
+            img.onerror = reject;
+        });
+    }
+
+
+    async predictImageClass(imgUrl: string): Promise<string> {
+        if (this.classifier.getNumClasses() <= 0) {
+            return Promise.reject('No training examples added yet.');
+        }
+
+        console.log('Predicting image class...');
+
+        const imgTensor: tf.Tensor = await this.getTensorFromImageUrl(imgUrl);
+        const activation = this.mobileNet.infer(imgTensor, 'conv_preds');
+        const result = await this.classifier.predictClass(activation);
+
+        imgTensor.dispose();
+
+        console.log(`
+              prediction: ${this.CLASSES[result.label]}\n
+              probability: ${result.confidences[result.label]}
+            `);
+        return Promise.resolve(this.CLASSES[result.label]);
+    }
+}

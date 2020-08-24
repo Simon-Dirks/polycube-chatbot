@@ -2,6 +2,13 @@
   background: lightgrey;
 }
 
+.photo-button {
+  position: absolute;
+  right: 13px;
+  z-index: 2;
+  margin-top: 10px;
+}
+
 .questions-list {
   max-height: 150px;
   overflow-y: scroll;
