@@ -1,17 +1,9 @@
 <app-header-bar [pageTitle]="'Chat'"></app-header-bar>
 
 <ion-content>
-    <!-- Loading tensorflow model -->
-    <div class="tensorflow-loader" *ngIf="objectRecognition.amtTrainingExamplesBeingProcessed > 0 || objectRecognition.loadingModel">
-        <p>
-            <ion-spinner></ion-spinner>
-            <span class="ion-margin-start">Loading...</span>
-        </p>
-    </div>
 
     <!-- Chat Messages -->
-    <div class="chat-container"
-         *ngIf="objectRecognition.amtTrainingExamplesBeingProcessed <= 0 && !objectRecognition.loadingModel">
+    <div class="chat-container">
         <div class="chat-messages" #chatMessages>
             <ion-grid>
                 <ion-row *ngFor="let chatMessage of chat.chatMessages.getValue(); let messageIdx = index">

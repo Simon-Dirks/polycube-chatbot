@@ -2,7 +2,8 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {ChatService} from '../../services/chat.service';
 import {QuestionService} from '../../services/question.service';
 import {CameraService} from '../../services/camera.service';
-import {ObjectRecognitionService} from '../../services/object-recognition.service';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import {environment} from '../../../environments/environment';
 
 @Component({
     selector: 'app-chat',
@@ -15,7 +16,8 @@ export class ChatComponent implements OnInit {
     constructor(public chat: ChatService,
                 public questions: QuestionService,
                 public camera: CameraService,
-                public objectRecognition: ObjectRecognitionService) {
+                private http: HttpClient,
+    ) {
     }
 
     ngOnInit() {
@@ -32,9 +34,19 @@ export class ChatComponent implements OnInit {
 
     async predictPhotoClass() {
         const img = await this.camera.takePhoto();
-        const predictedClass = await this.objectRecognition.predictImageClass(img.webPath);
-        console.log(predictedClass);
+
+        const formData = new FormData();
+        formData.append('imgBase64', img.dataUrl);
+
+        this.http.post<any>(environment.objectRecognitionApiUrl + '/classify', formData).toPromise().then((data) => {
+            console.log(data);
+            alert(JSON.stringify(data));
+        }).catch((err) => {
+            console.error(err);
+        });
+
     }
+
 
     scrollToBottom() {
         if (!this.chatMessagesElRef) {

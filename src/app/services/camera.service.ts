@@ -4,7 +4,6 @@ import {
     CameraPhoto, CameraSource
 } from '@capacitor/core';
 import {ChatService} from './chat.service';
-import {ObjectRecognitionService} from './object-recognition.service';
 
 const {Camera, Filesystem, Storage} = Plugins;
 
@@ -18,7 +17,7 @@ export class CameraService {
 
     async takePhoto(): Promise<CameraPhoto> {
         const photo: CameraPhoto = await Camera.getPhoto({
-            resultType: CameraResultType.Uri,
+            resultType: CameraResultType.DataUrl,
             source: CameraSource.Camera,
             quality: 100
         });
