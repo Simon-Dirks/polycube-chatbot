@@ -7,10 +7,21 @@
         <div class="chat-messages" #chatMessages>
             <ion-grid>
                 <ion-row *ngIf="imageClassifier.loadingModel">
-                    <ion-spinner class="ion-margin-right"></ion-spinner><em class="ion-margin-top loading-model-text">{{imageClassifier.loadingModelStatus}}</em>
+                    <ion-spinner class="ion-margin-right"></ion-spinner>
+                    <em class="ion-margin-top loading-model-text">{{imageClassifier.loadingModelStatus}}</em>
                 </ion-row>
+
                 <ion-row>
-                    <webcam width="250" [allowCameraSwitch]="false" (imageClick)="test()"></webcam>
+                    <p class="image-prediction-text" *ngIf="this.imageClassifier.lastPrediction !== ''">
+                        Image prediction: {{this.imageClassifier.lastPrediction}}
+                    </p>
+                    <webcam width="250" [trigger]="this.camera.trigger.asObservable()"
+                            [allowCameraSwitch]="false"
+                            (imageClick)="this.camera.trigger.next()"
+                            (imageCapture)="handleImage($event)"
+                            [captureImageData]="false">
+
+                    </webcam>
                 </ion-row>
                 <ion-row *ngFor="let chatMessage of chat.chatMessages.getValue(); let messageIdx = index">
                     <ion-col>

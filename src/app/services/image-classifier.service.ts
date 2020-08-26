@@ -12,6 +12,7 @@ export class ImageClassifierService {
     classifier;
     loadingModel = true;
     loadingModelStatus = 'Loading model...';
+    lastPrediction = '';
     readonly CLASSES = ['De Peer', 'The Memory of the Woman-Child', 'Ontmoeting'];
 
     constructor(private http: HttpClient) {
@@ -67,14 +68,16 @@ export class ImageClassifierService {
         const activation = this.mobileNet.infer(imgTensor, 'conv_preds');
         imgTensor.dispose();
         const result = await this.classifier.predictClass(activation);
+        const prediction = {
+            prediction: this.CLASSES[result.label],
+            probability: result.confidences[result.label]
+        };
+        this.lastPrediction = prediction.prediction;
 
         // console.log(`
         //                   prediction: ${this.CLASSES[result.label]}\n
         //                   probability: ${result.confidences[result.label]}
         //                 `);
-        return Promise.resolve({
-            prediction: this.CLASSES[result.label],
-            probability: result.confidences[result.label]
-        });
+        return Promise.resolve(prediction);
     }
 }

@@ -4,6 +4,7 @@ import {QuestionService} from '../../services/question.service';
 import {CameraService} from '../../services/camera.service';
 import {HttpClient} from '@angular/common/http';
 import {ImageClassifierService} from '../../services/image-classifier.service';
+import {WebcamImage} from 'ngx-webcam';
 
 @Component({
     selector: 'app-chat',
@@ -13,13 +14,15 @@ import {ImageClassifierService} from '../../services/image-classifier.service';
 })
 export class ChatComponent implements OnInit {
     @ViewChild('chatMessages', {static: false}) chatMessagesElRef: ElementRef;
-
     constructor(public chat: ChatService,
                 public questions: QuestionService,
                 public camera: CameraService,
-                private http: HttpClient,
                 public imageClassifier: ImageClassifierService
     ) {
+    }
+
+    async handleImage(image: WebcamImage) {
+        await this.imageClassifier.predictImageClass(image.imageAsDataUrl);
     }
 
     ngOnInit() {
@@ -34,14 +37,9 @@ export class ChatComponent implements OnInit {
         });
     }
 
-    test() {
-        alert('jfsaklfajs');
-    }
-
     async predictPhotoClass() {
         const img = await this.camera.takePhoto();
         const prediction = await this.imageClassifier.predictImageClass(img.webPath);
-        alert(JSON.stringify(prediction));
     }
 
     scrollToBottom() {

@@ -4,6 +4,7 @@ import {
     CameraPhoto, CameraSource
 } from '@capacitor/core';
 import {ChatService} from './chat.service';
+import {Subject} from 'rxjs';
 
 const {Camera, Filesystem, Storage} = Plugins;
 
@@ -11,6 +12,7 @@ const {Camera, Filesystem, Storage} = Plugins;
     providedIn: 'root'
 })
 export class CameraService {
+    public trigger: Subject<void> = new Subject<void>();
 
     constructor() {
     }

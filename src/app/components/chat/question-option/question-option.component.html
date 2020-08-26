@@ -4,7 +4,8 @@
         class="ion-text-wrap"
         (click)="questionService.askQuestion(question)"
         [disabled]="questionService.questionHasBeenAsked(question.id)"
-        *ngIf="question">
+        *ngIf="question"
+class="question-btn">
     <span>{{getFilteredWordString()[0]}}
         <strong>{{getFilteredWordString()[1]}}</strong>{{getFilteredWordString()[2]}}</span>
 </ion-button>
