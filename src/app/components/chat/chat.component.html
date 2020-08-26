@@ -6,6 +6,9 @@
     <div class="chat-container">
         <div class="chat-messages" #chatMessages>
             <ion-grid>
+                <ion-row *ngIf="imageClassifier.loadingModel">
+                    <ion-spinner></ion-spinner><em class="ion-margin-top">{{imageClassifier.loadingModelStatus}}</em>
+                </ion-row>
                 <ion-row *ngFor="let chatMessage of chat.chatMessages.getValue(); let messageIdx = index">
                     <ion-col>
                         <app-chat-message-bubble [messageIdx]="messageIdx" [message]="chatMessage">
@@ -23,7 +26,7 @@
         </div>
 
         <!-- Question Input -->
-        <div class="question-input-container">
+        <div class="question-input-container" *ngIf="!imageClassifier.loadingModel">
             <ion-button (click)="predictPhotoClass()"
                         *ngIf="!questions.filterInput"
                         class="photo-button"

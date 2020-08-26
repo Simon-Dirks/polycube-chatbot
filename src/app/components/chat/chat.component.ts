@@ -4,6 +4,7 @@ import {QuestionService} from '../../services/question.service';
 import {CameraService} from '../../services/camera.service';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
+import {ImageClassifierService} from '../../services/image-classifier.service';
 
 @Component({
     selector: 'app-chat',
@@ -17,6 +18,7 @@ export class ChatComponent implements OnInit {
                 public questions: QuestionService,
                 public camera: CameraService,
                 private http: HttpClient,
+                public imageClassifier: ImageClassifierService
     ) {
     }
 
@@ -34,19 +36,9 @@ export class ChatComponent implements OnInit {
 
     async predictPhotoClass() {
         const img = await this.camera.takePhoto();
-
-        const formData = new FormData();
-        formData.append('imgBase64', img.dataUrl);
-
-        this.http.post<any>(environment.objectRecognitionApiUrl + '/classify', formData).toPromise().then((data) => {
-            console.log(data);
-            alert(JSON.stringify(data));
-        }).catch((err) => {
-            console.error(err);
-        });
-
+        const prediction = await this.imageClassifier.predictImageClass(img.webPath);
+        alert(JSON.stringify(prediction));
     }
-
 
     scrollToBottom() {
         if (!this.chatMessagesElRef) {
