@@ -21,10 +21,6 @@ export class ChatComponent implements OnInit {
     ) {
     }
 
-    async handleImage(image: WebcamImage) {
-        await this.imageClassifier.predictImageClass(image.imageAsDataUrl);
-    }
-
     ngOnInit() {
         this.chat.chatMessages.subscribe(() => {
             this.scrollToBottom();
@@ -35,11 +31,6 @@ export class ChatComponent implements OnInit {
         this.chat.typingBotMessage.subscribe(() => {
             this.scrollToBottom();
         });
-    }
-
-    async predictPhotoClass() {
-        const img = await this.camera.takePhoto();
-        const prediction = await this.imageClassifier.predictImageClass(img.webPath);
     }
 
     scrollToBottom() {

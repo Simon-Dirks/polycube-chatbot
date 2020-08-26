@@ -12,15 +12,16 @@
                 </ion-row>
 
                 <ion-row>
-                    <p class="image-prediction-text" *ngIf="this.imageClassifier.lastPrediction !== ''">
-                        Image prediction: {{this.imageClassifier.lastPrediction}}
+                    <p class="image-prediction-text" *ngIf="imageClassifier.lastPrediction !== ''">
+                        Image prediction: {{imageClassifier.lastPrediction}}
                     </p>
-                    <webcam width="250" [trigger]="this.camera.trigger.asObservable()"
+                    <webcam width="250" [trigger]="camera.trigger.asObservable()"
                             [allowCameraSwitch]="false"
-                            (imageClick)="this.camera.trigger.next()"
-                            (imageCapture)="handleImage($event)"
-                            [captureImageData]="false">
-
+                            (imageClick)="camera.trigger.next()"
+                            (imageCapture)="camera.handleImage($event)"
+                            [captureImageData]="false"
+                            (initError)="camera.handleInitError($event)"
+                            *ngIf="camera.showWebcam">
                     </webcam>
                 </ion-row>
                 <ion-row *ngFor="let chatMessage of chat.chatMessages.getValue(); let messageIdx = index">
@@ -41,11 +42,11 @@
 
         <!-- Question Input -->
         <div class="question-input-container" *ngIf="!imageClassifier.loadingModel">
-            <ion-button (click)="predictPhotoClass()"
-                        *ngIf="!questions.filterInput"
-                        class="photo-button"
-                        fill="clear"
-                        color="primary">
+            <ion-button (click)="this.camera.showCam()"
+                    *ngIf="!questions.filterInput"
+                    class="photo-button"
+                    fill="clear"
+                    color="primary">
                 <ion-icon name="camera"></ion-icon>
             </ion-button>
 
