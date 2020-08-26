@@ -7,7 +7,10 @@
         <div class="chat-messages" #chatMessages>
             <ion-grid>
                 <ion-row *ngIf="imageClassifier.loadingModel">
-                    <ion-spinner></ion-spinner><em class="ion-margin-top">{{imageClassifier.loadingModelStatus}}</em>
+                    <ion-spinner class="ion-margin-right"></ion-spinner><em class="ion-margin-top loading-model-text">{{imageClassifier.loadingModelStatus}}</em>
+                </ion-row>
+                <ion-row>
+                    <webcam width="250" [allowCameraSwitch]="false" (imageClick)="test()"></webcam>
                 </ion-row>
                 <ion-row *ngFor="let chatMessage of chat.chatMessages.getValue(); let messageIdx = index">
                     <ion-col>

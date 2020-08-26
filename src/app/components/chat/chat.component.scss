@@ -21,8 +21,9 @@
   scroll-behavior: smooth;
 }
 
-ion-spinner {
-  color: white;
+.loading-model-text {
+  padding-left: 13px;
+  padding-top: 4px;
 }
 
 .chat-container {
@@ -37,4 +38,10 @@ ion-spinner {
 
 ion-searchbar {
   --box-shadow: none;
+}
+
+.webcam-wrapper > video {
+  border-radius: 4px;
+  width: 100%;
+  height: inherit;
 }

@@ -7,6 +7,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {ChatMessageBubbleComponent} from './chat-message-bubble/chat-message-bubble.component';
 import {HeaderBarModule} from '../shared/header-bar/header-bar.module';
 import {QuestionOptionComponent} from './question-option/question-option.component';
+import {WebcamModule} from 'ngx-webcam';
 
 @NgModule({
     imports: [
@@ -14,6 +15,7 @@ import {QuestionOptionComponent} from './question-option/question-option.compone
         FormsModule,
         IonicModule,
         HeaderBarModule,
+        WebcamModule
     ],
     declarations: [ChatComponent, ChatMessageBubbleComponent, QuestionOptionComponent]
 })

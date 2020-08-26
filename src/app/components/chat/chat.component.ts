@@ -1,15 +1,15 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import {ChatService} from '../../services/chat.service';
 import {QuestionService} from '../../services/question.service';
 import {CameraService} from '../../services/camera.service';
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
-import {environment} from '../../../environments/environment';
+import {HttpClient} from '@angular/common/http';
 import {ImageClassifierService} from '../../services/image-classifier.service';
 
 @Component({
     selector: 'app-chat',
     templateUrl: './chat.component.html',
     styleUrls: ['./chat.component.scss'],
+    encapsulation: ViewEncapsulation.ShadowDom
 })
 export class ChatComponent implements OnInit {
     @ViewChild('chatMessages', {static: false}) chatMessagesElRef: ElementRef;
@@ -32,6 +32,10 @@ export class ChatComponent implements OnInit {
         this.chat.typingBotMessage.subscribe(() => {
             this.scrollToBottom();
         });
+    }
+
+    test() {
+        alert('jfsaklfajs');
     }
 
     async predictPhotoClass() {

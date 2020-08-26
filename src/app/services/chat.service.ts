@@ -14,7 +14,7 @@ export class ChatService {
 
     constructor(private http: HttpClient) {
         this.chatMessages = new BehaviorSubject<ChatMessageModel[]>([]);
-        this.typingBotMessage = new BehaviorSubject<boolean>(true);
+        this.typingBotMessage = new BehaviorSubject<boolean>(false);
     }
 
     sendMessage(message: ChatMessageModel) {
