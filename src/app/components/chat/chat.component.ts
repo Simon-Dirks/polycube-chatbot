@@ -5,6 +5,8 @@ import {CameraService} from '../../services/camera.service';
 import {HttpClient} from '@angular/common/http';
 import {ImageClassifierService} from '../../services/image-classifier.service';
 import {WebcamImage} from 'ngx-webcam';
+import {ModalController} from '@ionic/angular';
+import {CameraModalComponent} from './camera-modal/camera-modal.component';
 
 @Component({
     selector: 'app-chat',
@@ -17,7 +19,8 @@ export class ChatComponent implements OnInit {
     constructor(public chat: ChatService,
                 public questions: QuestionService,
                 public camera: CameraService,
-                public imageClassifier: ImageClassifierService
+                public imageClassifier: ImageClassifierService,
+                public modalController: ModalController
     ) {
     }
 
@@ -31,6 +34,15 @@ export class ChatComponent implements OnInit {
         this.chat.typingBotMessage.subscribe(() => {
             this.scrollToBottom();
         });
+    }
+
+    async showCamPopup() {
+        const modal = await this.modalController.create({
+            component: CameraModalComponent,
+            componentProps: {controller: this.modalController}
+        });
+        await modal.present();
+        this.imageClassifier.lastPrediction = '';
     }
 
     scrollToBottom() {

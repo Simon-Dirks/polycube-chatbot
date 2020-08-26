@@ -8,6 +8,7 @@ import {ChatMessageBubbleComponent} from './chat-message-bubble/chat-message-bub
 import {HeaderBarModule} from '../shared/header-bar/header-bar.module';
 import {QuestionOptionComponent} from './question-option/question-option.component';
 import {WebcamModule} from 'ngx-webcam';
+import {CameraModalComponent} from './camera-modal/camera-modal.component';
 
 @NgModule({
     imports: [
@@ -17,7 +18,7 @@ import {WebcamModule} from 'ngx-webcam';
         HeaderBarModule,
         WebcamModule
     ],
-    declarations: [ChatComponent, ChatMessageBubbleComponent, QuestionOptionComponent]
+    declarations: [ChatComponent, CameraModalComponent, ChatMessageBubbleComponent, QuestionOptionComponent]
 })
 export class ChatModule {
 }

@@ -7,6 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class HeaderBarComponent implements OnInit {
   @Input() pageTitle: string;
+  @Input() showBackButton: boolean;
 
   constructor() { }
 

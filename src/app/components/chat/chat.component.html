@@ -15,14 +15,7 @@
                     <p class="image-prediction-text" *ngIf="imageClassifier.lastPrediction !== ''">
                         Image prediction: {{imageClassifier.lastPrediction}}
                     </p>
-                    <webcam width="250" [trigger]="camera.trigger.asObservable()"
-                            [allowCameraSwitch]="false"
-                            (imageClick)="camera.trigger.next()"
-                            (imageCapture)="camera.handleImage($event)"
-                            [captureImageData]="false"
-                            (initError)="camera.handleInitError($event)"
-                            *ngIf="camera.showWebcam">
-                    </webcam>
+
                 </ion-row>
                 <ion-row *ngFor="let chatMessage of chat.chatMessages.getValue(); let messageIdx = index">
                     <ion-col>
@@ -42,7 +35,7 @@
 
         <!-- Question Input -->
         <div class="question-input-container" *ngIf="!imageClassifier.loadingModel">
-            <ion-button (click)="this.camera.showCam()"
+            <ion-button (click)="showCamPopup()"
                     *ngIf="!questions.filterInput"
                     class="photo-button"
                     fill="clear"
