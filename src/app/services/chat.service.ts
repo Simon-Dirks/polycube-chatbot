@@ -3,7 +3,6 @@ import {HttpClient} from '@angular/common/http';
 import {BehaviorSubject} from 'rxjs';
 import {ChatMessageModel} from '../models/chat-message.model';
 import {environment} from '../../environments/environment';
-import {SourceModel} from '../models/source.model';
 
 @Injectable({
     providedIn: 'root',

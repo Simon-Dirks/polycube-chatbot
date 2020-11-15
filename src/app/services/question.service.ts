@@ -3,7 +3,6 @@ import {ChatService} from './chat.service';
 import {BehaviorSubject} from 'rxjs';
 import {QuestionModel} from '../models/question.model';
 import {HttpClient} from '@angular/common/http';
-import {environment} from "../../environments/environment";
 
 @Injectable({
     providedIn: 'root',
@@ -51,20 +50,26 @@ export class QuestionService {
         this.chat.sendMessages(question.questionAnswers);
         this.filterInput = '';
 
-        this.askedQuestionIds.push(question.id);
+        const questionHasBeenAsked = this.askedQuestionIds.includes(question.id);
+        if (!questionHasBeenAsked) {
+            this.askedQuestionIds.push(question.id);
 
-        if(question.followUpQuestions) {
-            question.followUpQuestions.forEach(q => {
-                this.addQuestion(q);
-            });
+            if (question.followUpQuestions) {
+                question.followUpQuestions.forEach(q => {
+                    this.addQuestion(q);
+                });
+
+                // const timeBeforeShowingFollowupQuestions = environment.delayBetweenMessages * (question.questionAnswers.length + 0.5);
+                // setTimeout(() => {
+                //     question.followUpQuestions.forEach(q => {
+                //         this.addQuestion(q);
+                //     });
+                // }, timeBeforeShowingFollowupQuestions);
+            }
         }
 
-        // const timeBeforeShowingFollowupQuestions = environment.delayBetweenMessages * (question.questionAnswers.length + 0.5);
-        // setTimeout(() => {
-        //     question.followUpQuestions.forEach(q => {
-        //         this.addQuestion(q);
-        //     });
-        // }, timeBeforeShowingFollowupQuestions);
+
+
     }
 
     questionHasBeenAsked(id: string) {

@@ -35,7 +35,7 @@
 
         <p class="ion-no-margin ion-margin-bottom"
            *ngFor="let text of message.messageText.split('|')">
-            {{text}}
+            <span [appTextWithLinks]="text"></span>
         </p>
     </div>
 </div>

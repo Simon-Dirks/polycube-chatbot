@@ -5,4 +5,5 @@ export interface QuestionModel {
     questionAsked: ChatMessageModel;
     questionAnswers: ChatMessageModel[];
     followUpQuestions?: QuestionModel[];
+    keywords?: string[];
 }

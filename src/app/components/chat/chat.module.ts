@@ -9,6 +9,7 @@ import {HeaderBarModule} from '../shared/header-bar/header-bar.module';
 import {QuestionOptionComponent} from './question-option/question-option.component';
 import {WebcamModule} from 'ngx-webcam';
 import {CameraModalComponent} from './camera-modal/camera-modal.component';
+import {TextWithLinksModule} from '../../directives/text-with-links.module';
 
 @NgModule({
     imports: [
@@ -16,7 +17,8 @@ import {CameraModalComponent} from './camera-modal/camera-modal.component';
         FormsModule,
         IonicModule,
         HeaderBarModule,
-        WebcamModule
+        WebcamModule,
+        TextWithLinksModule
     ],
     declarations: [ChatComponent, CameraModalComponent, ChatMessageBubbleComponent, QuestionOptionComponent]
 })
