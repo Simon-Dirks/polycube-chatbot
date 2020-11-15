@@ -10,13 +10,13 @@ import {HttpClient} from '@angular/common/http';
 export class ImageClassifierService {
     mobileNet;
     classifier;
-    loadingModel = true;
+    loadingModel = false;
     loadingModelStatus = 'Loading model...';
     lastPrediction = '';
     readonly CLASSES = ['De Peer', 'The Memory of the Woman-Child', 'Ontmoeting'];
 
     constructor(private http: HttpClient) {
-        this.loadModel();
+        // this.loadModel();
     }
 
     async loadClassifier() {
