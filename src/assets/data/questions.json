@@ -6,7 +6,7 @@
     },
     "questionAnswers": [
       {
-        "messageText": "Developed in Europe in the aftermath of World War I, the surrealist movement is best known for its juxtaposition of uncommon imagery and focus on the unconscious.",
+        "messageText": "Moesman Developed Moesman in Europe in the aftermath of World War I, the surrealist movement is best known for its juxtaposition of uncommon imagery and focus on the unconscious.",
         "sourceId": "wikipedia"
       }
     ],
@@ -47,7 +47,8 @@
             "messageText": "Moesman used surrealism as an opportunity to indulge his sexual fantasies on the canvas – with the excuse that the images were produced by the subconscious, for which he could not be held responsible.",
             "sourceId": "maia"
           }
-        ]
+        ],
+        "keywords": ["Moesman"]
       }
     ]
   }

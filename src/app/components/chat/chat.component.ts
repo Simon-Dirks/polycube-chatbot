@@ -28,7 +28,7 @@ export class ChatComponent implements OnInit {
         this.chat.chatMessages.subscribe(() => {
             this.scrollToBottom();
         });
-        this.questions.allQuestions.subscribe(() => {
+        this.questions.availableQuestions.subscribe(() => {
             this.scrollToBottom();
         });
         this.chat.typingBotMessage.subscribe(() => {
