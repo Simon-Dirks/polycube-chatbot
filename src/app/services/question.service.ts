@@ -54,6 +54,22 @@ export class QuestionService {
         return filteredQuestions;
     }
 
+    public makeQuestionsAvailableByKeyword(keyword: string) {
+        console.log('Making all questions available for keyword', keyword);
+        for (const question of this.allQuestions.getValue()) {
+            if (question.keywords.includes(keyword)) {
+                this.makeQuestionAvailable(question);
+            }
+        }
+    }
+
+    public getAllAvailableKeywords(): string[] {
+        const allKeywordLists: string[][] = this.allQuestions.getValue().map((q) => q.keywords);
+        const allKeywords = [].concat.apply([], allKeywordLists);
+        const allUniqueKeywords: string[] = Array.from(new Set(allKeywords));
+        return allUniqueKeywords;
+    }
+
     private makeQuestionAvailable(question: QuestionModel) {
         if (this.questionIsAvailable(question.id)) {
             return;

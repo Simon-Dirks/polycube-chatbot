@@ -28,15 +28,13 @@ export class LinksInPlaintextService {
     }
 
     private createClickableElem(vc: ViewContainerRef,
-                                linkText: string,
-                                question: QuestionModel) {
+                                linkText: string) {
         const linkFactory: ComponentFactory<QuestionLinkComponent> = this.componentFactoryResolver.resolveComponentFactory(
             QuestionLinkComponent
         );
 
         const linkComponent: ComponentRef<QuestionLinkComponent> = vc.createComponent(linkFactory);
         linkComponent.instance.linkText = linkText;
-        linkComponent.instance.question = question;
 
         const sourceElem: HTMLElement = linkComponent.location.nativeElement;
         return sourceElem;
@@ -47,19 +45,13 @@ export class LinksInPlaintextService {
 
         let allKeywordIndices = [];
 
-        for (const question of this.questions.allQuestions.getValue()) {
-            if (!question.keywords || question.keywords.length === 0) {
-                continue;
-            }
+        for (const keyword of this.questions.getAllAvailableKeywords()) {
+            const keywordIndices = this.utils.getAllIndices(plainText.toLowerCase(), keyword.toLowerCase());
+            const keywordIndicesWithLinks = keywordIndices.map((index) => {
+                return {idx: index, keyword};
+            });
 
-            for (const keyword of question.keywords) {
-                const keywordIndices = this.utils.getAllIndices(plainText.toLowerCase(), keyword.toLowerCase());
-                const keywordIndicesWithLinks = keywordIndices.map((index) => {
-                    return {idx: index, keyword, referencedQuestion: question};
-                });
-
-                allKeywordIndices = allKeywordIndices.concat(keywordIndicesWithLinks);
-            }
+            allKeywordIndices = allKeywordIndices.concat(keywordIndicesWithLinks);
         }
 
         return allKeywordIndices.sort((a, b) => {
@@ -74,6 +66,7 @@ export class LinksInPlaintextService {
         plainText: string
     ) {
         const keywordsToReplace = this.getKeywordIndices(plainText);
+        console.log(keywordsToReplace);
 
         let currentIdx = 0;
         for (const keywordToReplace of keywordsToReplace) {
@@ -82,7 +75,7 @@ export class LinksInPlaintextService {
             this.appendNewTextElem(renderer, textBeforeKeyword, elRef.nativeElement);
 
             // Add keyword itself
-            const keywordElem = this.createClickableElem(vc, keywordToReplace.keyword, keywordToReplace.referencedQuestion);
+            const keywordElem = this.createClickableElem(vc, keywordToReplace.keyword);
             renderer.appendChild(elRef.nativeElement, keywordElem);
 
             currentIdx = keywordToReplace.idx + keywordToReplace.keyword.length;
