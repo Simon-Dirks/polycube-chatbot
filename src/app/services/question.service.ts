@@ -3,6 +3,7 @@ import {ChatService} from './chat.service';
 import {BehaviorSubject} from 'rxjs';
 import {QuestionModel} from '../models/question.model';
 import {HttpClient} from '@angular/common/http';
+import {ToastController} from '@ionic/angular';
 
 @Injectable({
     providedIn: 'root',
@@ -15,7 +16,8 @@ export class QuestionService {
     filterInput: string;
 
     constructor(private chat: ChatService,
-                private http: HttpClient) {
+                private http: HttpClient,
+                private toastController: ToastController) {
         this.availableQuestions = new BehaviorSubject<QuestionModel[]>([]);
         this.allQuestions = new BehaviorSubject<QuestionModel[]>([]);
 
@@ -54,13 +56,42 @@ export class QuestionService {
         return filteredQuestions;
     }
 
-    public makeQuestionsAvailableByKeyword(keyword: string) {
+    public async makeQuestionsAvailableByKeyword(keyword: string) {
         console.log('Making all questions available for keyword', keyword);
+        let amtNewQuestionsAvailable = 0;
         for (const question of this.allQuestions.getValue()) {
             if (question.keywords.includes(keyword)) {
-                this.makeQuestionAvailable(question);
+                const addedNewQuestion = this.makeQuestionAvailable(question);
+                if (addedNewQuestion) {
+                    amtNewQuestionsAvailable++;
+                }
             }
         }
+
+        let updateMessage = 'All questions for the keyword <strong>\"' + keyword + '\"</strong> are already available.';
+        if (amtNewQuestionsAvailable > 0) {
+            if (amtNewQuestionsAvailable === 1) {
+                updateMessage = '<strong>One new question</strong> related to <strong>\"' + keyword + '\"</strong> is now available.';
+            } else {
+                updateMessage = '<strong>' + amtNewQuestionsAvailable + ' questions</strong> related to <strong>\"' + keyword + '\"</strong> are now available.';
+            }
+        }
+
+        const toast = await this.toastController.create({
+            message: updateMessage,
+            position: 'bottom',
+            buttons: [
+                {
+                    text: 'OK',
+                    role: 'cancel',
+                    handler: () => {
+                        console.log('Cancel clicked');
+                    }
+                }
+            ],
+            duration: 2500
+        });
+        await toast.present();
     }
 
     public getAllAvailableKeywords(): string[] {
@@ -70,9 +101,9 @@ export class QuestionService {
         return allUniqueKeywords;
     }
 
-    private makeQuestionAvailable(question: QuestionModel) {
+    private makeQuestionAvailable(question: QuestionModel): boolean {
         if (this.questionIsAvailable(question.id)) {
-            return;
+            return false;
         }
 
         const allQuestions = this.availableQuestions.getValue();
@@ -80,6 +111,7 @@ export class QuestionService {
         const askedQuestions = allQuestions.filter(q => this.questionHasBeenAsked(q.id));
         const unaskedQuestions = allQuestions.filter(q => !this.questionHasBeenAsked(q.id));
         this.availableQuestions.next(unaskedQuestions.concat(askedQuestions));
+        return true;
     }
 
     private questionIsAvailable(questionId: string) {
