@@ -1,30 +1,62 @@
 [
   {
-    "id": "wikipedia",
+    "id": "Britannica",
+    "name": "Britannica",
+    "url": "https://www.britannica.com/science/physical-anthropology",
+    "role": "Online Encyclopedia"
+  },
+  {
+    "id": "Fenneke Sysling, 2015a",
+    "name": " Fenneke Sysling,",
+    "url": " https://journals.openedition.org/rhsh/2595?lang=fr",
+    "role": "Assistant Professor in History"
+  },
+  {
+    "id": "Fenneke Sysling, 2015b",
+    "name": " Fenneke Sysling,",
+    "url": "#",
+    "role": "Assistant Professor in History"
+  },
+  {
+    "id": "Fenneke Sysling, 2016",
+    "name": " Fenneke Sysling,",
+    "url": "#",
+    "role": "Assistant Professor in History"
+  },
+  {
+    "id": "Jill",
+    "name": "Jill Decrop Ernst",
+    "url": "#",
+    "role": "CAST student"
+  },
+  {
+    "id": "Jet",
+    "name": "Jet Blokhuis",
+    "url": "#",
+    "role": "Project manager and fundraiser University Museum Utrecht"
+  },
+  {
+    "id": "Wikipedia Plaster Casts",
     "name": "Wikipedia",
-    "url": "https://en.wikipedia.org/wiki/Surrealism",
-    "role": "Online Encyclopedia",
-    "imageUrl": "wikipedia.png"
+    "url": "https://en.wikipedia.org/wiki/Lifecasting",
+    "role": "Online Encyclopedia"
   },
   {
-    "id": "marieke",
-    "name": "Marieke van de Berg",
-    "url": "#",
-    "role": "Art Critic",
-    "imageUrl": "marieke.png"
+    "id": "Wikipedia De Zwaan",
+    "name": "Wikipedia",
+    "url": "https://nl.wikipedia.org/wiki/Johannes_Pieter_Kleiweg_de_Zwaan",
+    "role": "Online Encyclopedia"
   },
   {
-    "id": "tim",
-    "name": "Tim Teunisse",
-    "url": "#",
-    "role": "Art History Student",
-    "imageUrl": "tim.png"
+    "id": "Shapiro, 2016",
+    "name": " Harry L. Shapiro,",
+    "url": "https://www.jstor.org/stable/667203",
+    "role": "American anthropologist"
   },
   {
-    "id": "maia",
-    "name": "Maia Kenney",
-    "url": "#",
-    "role": "Assistant Curator",
-    "imageUrl": "maia-kenney.png"
+    "id": "Rijksmuseum",
+    "name": "Rijksmuseum",
+    "url": " https://www.rijksmuseum.nl/en/collection/NG-C-2012-3",
+    "role": "Museum"
   }
 ]

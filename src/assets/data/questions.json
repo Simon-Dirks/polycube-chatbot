@@ -2,52 +2,603 @@
   {
     "id": "q1",
     "questionAsked": {
-      "messageText": "What is surrealism?"
+      "messageText": " What is physical anthropology?"
     },
     "questionAnswers": [
       {
-        "messageText": "Moesman Developed Moesman in Europe in the aftermath of World War I, the surrealist movement is best known for its juxtaposition of uncommon imagery and focus on the unconscious."
-      }
-    ],
-    "keywords": ["surrealism"]
-  },
-  {
-    "id": "q2",
-    "questionAsked": {
-      "messageText": "What did people think of De Peer?"
-    },
-    "questionAnswers": [
-      {
-        "messageText": "I saw De Peer at the Stedelijk Museum in 1931. De Peer was completely incomprehensible, I remember being stumped by this strange figure.",
-        "sourceId": "marieke"
+        "messageText": "Physical anthropology is a scientific discipline that studies the origin, evolution, and diversity of people.",
+        "sourceId": "Britannica"
       },
       {
-        "messageText": "Looking back on the exhibition in the Stedelijk Museum, Moesman was far ahead of his time.",
-        "sourceId": "tim"
+        "messageText": "Physical anthropologists aimed at quantifiying the human body by making measurements of skeletons and living bodies, photography and making plaster casts.",
+        "sourceId": "Fenneke Sysling 2015a"
       },
       {
-        "messageText": "Back then, a painting like this was considered completely taboo.",
-        "sourceId": "tim"
+        "messageText": "Physical anthropology mostly aimed at exploring how races could be defined and what distinguished them.",
+        "sourceId": "Fenneke Sysling 2016"
       }
     ],
-    "keywords": ["De Peer", "surrealism"],
+    "keywords": [
+      "Physical anthropology"
+    ],
     "followUpQuestions": [
       {
-        "id": "q3",
+        "id": "q4",
         "questionAsked": {
-          "messageText": "Who was Johannes Moesman?"
+          "messageText": "When did physical anthropology develop?"
         },
         "questionAnswers": [
           {
-            "messageText": "Johannes Moesman was the only Dutch artist to be formally ranked among the surrealists. ",
-            "sourceId": "maia"
-          },
-          {
-            "messageText": "Moesman used surrealism as an opportunity to indulge his sexual fantasies on the canvas – with the excuse that the images were produced by the subconscious, for which he could not be held responsible.",
-            "sourceId": "maia"
+            "messageText": "Physical anthropology began to be recognized as a field in the second half of the 19th century but its beginnings can be traced earlier.",
+            "sourceId": "Shapiro, 2016"
           }
         ],
-        "keywords": ["Moesman", "surrealism"]
+        "keywords": [
+          "Physical anthropology"
+        ]
+      },
+      {
+        "id": "q5",
+        "questionAsked": {
+          "messageText": "Why did physical anthropology develop?"
+        },
+        "questionAnswers": [
+          {
+            "messageText": "Two important elements influenced the development of physical anthropology. First, at the time, the human body increasingly began to be studied, as doctors started to study and dissect human bodies, skulls, and skeletons.",
+            "sourceId": "Fenneke Sysling, 2016"
+          },
+          {
+            "messageText": "Secondly, there was an opening of the world to western travellers, allowing anthropologists to travel long distances to conduct their research.",
+            "sourceId": "Fenneke Sysling, 2016"
+          }
+        ],
+        "keywords": [
+          "Physical anthropology"
+        ]
+      },
+      {
+        "id": "q6",
+        "questionAsked": {
+          "messageText": "When did physical anthropology develop in the Netherlands?"
+        },
+        "questionAnswers": [
+          {
+            "messageText": "Physical anthropology took off in the Netherlands in the late 19th century and its popularity reached its pinnacle during the 1920s and 30s.",
+            "sourceId": "Fenneke Sysling, 2015a"
+          },
+          {
+            "messageText": " The first Dutch colonial physical anthropologists were influenced by developments in France.",
+            "sourceId": "Fenneke Sysling, 2015a"
+          },
+          {
+            "messageText": "When the scientific importance of France diminished around the turn of the 20th century and from that moment onwards, Dutch anthropologists, then, begun to follow the German physical anthropological practices.",
+            "sourceId": "Fenneke Sysling, 2015a"
+          }
+        ],
+        "keywords": [
+          "Physical anthropology",
+          "Netherlands"
+        ],
+        "followUpQuestions": [
+          {
+            "id": "q8",
+            "questionAsked": {
+              "messageText": "Why did physical anthropology took off in the Netherlands??"
+            },
+            "questionAnswers": [
+              {
+                "messageText": "In the Netherlands, racial differences were studied in laboratories by anatomists since the 1850s.",
+                "sourceId": "Fenneke Sysling, 2015a"
+              },
+              {
+                "messageText": "The late 19th century colonial expansion by Western European powers generated a new interest in the discipline and provided opportunities for Dutch physical anthropologists to conduct field works in less known islands in the Dutch Indies. ",
+                "sourceId": "Fenneke Sysling, 2015a"
+              }
+            ],
+            "keywords": [
+              "Physical anthropology",
+              "Netherlands",
+              "Dutch anthropologists"
+            ]
+          },
+          {
+            "id": "q9",
+            "questionAsked": {
+              "messageText": " Who contributed to physical anthropology in the Netherlands?"
+            },
+            "questionAnswers": [
+              {
+                "messageText": "With Notices Anthropologiques, doctor and scientist Herman ten Kate was the first to introduce the field of colonial physical anthropology to the Netherlands in collaboration with the curator Lindor Serrurier.",
+                "sourceId": "Fenneke Sysling, 2016"
+              },
+              {
+                "messageText": "Gijsbert van den Sande and Jan Willem Koch were the first Dutch anthropologists to organize expeditions and do research respectively on the North and South coasts of New Guinea in 1903 and 1904-5.",
+                "sourceId": "Fenneke Sysling, 2016"
+              },
+              {
+                "messageText": "Kleiweg de Zwaan played an important role for physical anthropology by creating an institutional basis for the discipline at the Colonial Institute (Amsterdam).",
+                "sourceId": "Fenneke Sysling, 2016"
+              },
+              {
+                "messageText": "Wilhelmina Keers was one of the few female anthropologists at the time.",
+                "sourceId": "Fenneke Sysling, 2016"
+              }
+            ],
+            "keywords": [
+              "Dutch anthropologists",
+              "Netherlands"
+            ]
+          },
+          {
+            "id": "q10",
+            "questionAsked": {
+              "messageText": "Where did Dutch physical anthropologists go?"
+            },
+            "questionAnswers": [
+              {
+                "messageText": "Some anthropologists never left Europe, but from the late 19th century to the 1950s, many of them travelled to the Dutch colonies.",
+                "sourceId": "Fenneke Sysling, 2016"
+              }
+            ],
+            "keywords": [
+              "Dutch anthropologists",
+              "Netherlands"
+            ]
+          },
+          {
+            "id": "q23",
+            "questionAsked": {
+              "messageText": "How did Dutch anthropologists share their findings with to wider audiences?"
+            },
+            "questionAnswers": [
+              {
+                "messageText": "After their journeys, anthropologists published several books and articles about their measurements and findings. Such books often included photographs they had taken.",
+                "sourceId": "Jill"
+              },
+              {
+                "messageText": "Photographs and plaster casts were used to communicate knowledge about the Dutch Indies and their inhabitants to the public, in a more direct way (i.e. without overwhelming them with text and numbers)",
+                "sourceId": "Fenneke Sysling, 2016"
+              },
+              {
+                "messageText": "However, physical anthropologists still needed to help the public (i.e. non-anthropologists) to interpret photographs and plaster casts.",
+                "sourceId": "Fenneke Sysling, 2015a"
+              }
+            ],
+            "keywords": [
+              "Dutch anthropologists",
+              "Netherlands",
+              "Plaster casts"
+            ],
+            "followUpQuestions": [
+              {
+                "id": "q24",
+                "questionAsked": {
+                  "messageText": "To which institutions and museums did the Dutch Physical anthropologists send the material gathered during their trip?"
+                },
+                "questionAnswers": [
+                  {
+                    "messageText": "The anthropologists illustrated in the ArtBot Guide mostly exhibited the material gathered during their journeys (i.e.photographs, human remains, and plaster casts) in three institutions and museums.",
+                    "sourceId": "Fenneke Sysling, 2016"
+                  },
+                  {
+                    "messageText": " The Colonial Institute and the Treub society in Amsterdam, and the National Ethnographic Museum.",
+                    "sourceId": "Fenneke Sysling, 2016"
+                  },
+                  {
+                    "messageText": " This can be explained by the fact that Leiden and Amsterdam were two centers of colonial anthropology.",
+                    "sourceId": "Fenneke Sysling, 2016"
+                  }
+                ],
+                "keywords": [
+                  "Dutch anthropologists",
+                  "Netherlands"
+                ]
+              },
+              {
+                "id": "q11",
+                "questionAsked": {
+                  "messageText": " How did the locals react to anthropological practices?"
+                },
+                "questionAnswers": [
+                  {
+                    "messageText": "The reactions of locals to measurements were varied, and ranged from fear and confusion to curiosity.",
+                    "sourceId": "Fenneke Sysling, 2016"
+                  },
+                  {
+                    "messageText": "Some of the locals also incorporated these practices in their own lives. For instance, some locals would also anthropometric calculations with other locals or to the anthropologists visiting them.",
+                    "sourceId": "Fenneke Sysling, 2016"
+                  },
+                  {
+                    "messageText": "Photography encountered less resistance than measurements. This is because photographs were less invasive than measurements and plaster castings.",
+                    "sourceId": "Fenneke Sysling, 2016"
+                  },
+                  {
+                    "messageText": "Plaster casting was intrusive, unpleasant, and sometimes lead to injuries. As such, they encountered so much resistance that only fews collections exist.",
+                    "sourceId": "Fenneke Sysling, 2016"
+                  }
+                ],
+                "keywords": [
+                  "Dutch anthropologists",
+                  "Netherlands",
+                  "locals",
+                  "Plaster casts"
+                ],
+                "followUpQuestions": [
+                  {
+                    "id": "q12",
+                    "questionAsked": {
+                      "messageText": "How did (Dutch) anthropologists convince the locals to be the subject of their practices?"
+                    },
+                    "questionAnswers": [
+                      {
+                        "messageText": "When encountering resistance, anthropologists used different techniques to convince locals.",
+                        "sourceId": "Fenneke Sysling, 2016"
+                      },
+                      {
+                        "messageText": "Some would promise locals gifts and sometimes resorted to using tricks to convince reluctant locals.",
+                        "sourceId": "Fenneke Sysling, 2016"
+                      },
+                      {
+                        "messageText": "Others would use their medical skills and require locals to be measured before giving them medicine. Another way, would be to show locals their skills by showing them the books they had written or their photography skills.",
+                        "sourceId": "Fenneke Sysling, 2016"
+                      },
+                      {
+                        "messageText": "Anthropologists would also bring their wives with them to make contact with local women easier and gain their trust.",
+                        "sourceId": "Fenneke Sysling, 2016"
+                      }
+                    ],
+                    "keywords": [
+                      "Dutch anthropologists",
+                      "Netherlands",
+                      "locals"
+                    ]
+                  },
+                  {
+                    "id": "q7",
+                    "questionAsked": {
+                      "messageText": "What is the role of plaster cast in this physical anthropology?"
+                    },
+                    "questionAnswers": [
+                      {
+                        "messageText": "Plaster casts had three purposes",
+                        "sourceId": "Fenneke Sysling, 2015a"
+                      },
+                      {
+                        "messageText": "First, they were used to study the measurements/proportions of the body because physical anthropology believed plaster casts quantified the human body in the most objective way",
+                        "sourceId": "Fenneke Sysling, 2015a"
+                      },
+                      {
+                        "messageText": "Second, one plaster cast would be used as archetypal example of race. In other words, one cast which would be considered as the ultimate representation of a specific race.",
+                        "sourceId": "Fenneke Sysling, 2015a"
+                      },
+                      {
+                        "messageText": "Third, casts were used as a group to teach observers to learn racial particularities.",
+                        "sourceId": "Fenneke Sysling, 2015a"
+                      }
+                    ],
+                    "keywords": [
+                      "Physical anthropology",
+                      "Plater casts"
+                    ],
+                    "followUpQuestions": [
+                      {
+                        "id": "q13",
+                        "questionAsked": {
+                          "messageText": "In what other contexts have plaster casts been used?"
+                        },
+                        "questionAnswers": [
+                          {
+                            "messageText": " Plaster casting practices were not only used in colonial contexts. They were already used in the Middle Ages to make masks of the deceased or death masks",
+                            "sourceId": " Fenneke Sysling, 2016"
+                          },
+                          {
+                            "messageText": " Ms. Schuiringa also used these practices in a medical context to create maxillo facial prosthetics.",
+                            "sourceId": "Jet"
+                          },
+                          {
+                            "messageText": "Plaster casts were also used by the special effects industry for prosthetics, props, and animatronics for movies and television",
+                            "sourceId": "Wikipedia Plaster Casts"
+                          },
+                          {
+                            "messageText": "Plaster casts' ability to reproduce human bodies also lead them to be used in art.",
+                            "sourceId": "Wikipedia Plaster Casts"
+                          }
+                        ],
+                        "keywords": [
+                          "Plaster casts"
+                        ]
+                      },
+                      {
+                        "id": "q14",
+                        "questionAsked": {
+                          "messageText": "How did anthropologists make face casts?"
+                        },
+                        "questionAnswers": [
+                          {
+                            "messageText": "To mold one face, one and a half kilo of plaster are required. This needs to be mixed with water.",
+                            "sourceId": "Fenneke Sysling, 2015a"
+                          },
+                          {
+                            "messageText": "The body parts to be molded needed to be oiled to avoid pain when the molds are taken away. Goose quills would be inserted in the nose to make sure the subject could breathe.",
+                            "sourceId": "Fenneke Sysling, 2015a"
+                          },
+                          {
+                            "messageText": "Anthropologists needed training and practice before leaving.",
+                            "sourceId": " Fenneke Sysling, 2015a"
+                          }
+                        ],
+                        "keywords": [
+                          "Plaster casts"
+                        ]
+                      },
+                      {
+                        "id": "q15",
+                        "questionAsked": {
+                          "messageText": "How are plaster casts made nowadays?"
+                        },
+                        "questionAnswers": [
+                          {
+                            "messageText": "Many instructions can now be found online on how to make plaster casts of one's own face. .",
+                            "sourceId": "Jill"
+                          },
+                          {
+                            "messageText": "Like in the past, body parts need to be oiled to prevent pain when removing the mold. ",
+                            "sourceId": "Fenneke Sysling, 2015a"
+                          },
+                          {
+                            "messageText": "Different materials can be used for the creation of the molds, alginate, a product made from brown seaweed, and plaster bandages are most popular. However, imaging technology can also be used for this purpose.",
+                            "sourceId": " Wikipedia Plaster Casts"
+                          },
+                          {
+                            "messageText": " When it comes to the masks, plaster and gypsum are most common. Other materials used are plastic, metal, clay, or even glass, chocolate, and ice.",
+                            "sourceId": " Wikipedia Plaster Casts"
+                          }
+                        ],
+                        "keywords": [
+                          "Plaster casts"
+                        ]
+                      },
+                      {
+                        "id": "q16",
+                        "questionAsked": {
+                          "messageText": "How do historians perceive the colonial and anthropological practice of plaster casting in the 19 and 20th centuries?"
+                        },
+                        "questionAnswers": [
+                          {
+                            "messageText": "The use of plaster casts in physical anthropology was critically viewed by historians because plaster casts were claimed to be used for science when they classified, typecast, and controlled colonial subject.",
+                            "sourceId": "Fenneke Sysling, 2015a"
+                          },
+                          {
+                            "messageText": " Plaster casts allowed anthropologists to gather information on a virtual human body, without having to handle or deal with a resistant subject. As such, the making of casts silenced indigenous people.",
+                            "sourceId": "Fenneke Sysling, 2015a"
+                          }
+                        ],
+                        "keywords": [
+                          "Plaster casts"
+                        ]
+                      },
+                      {
+                        "id": "q2",
+                        "questionAsked": {
+                          "messageText": "Who was Johannes Pieter Kleiweg de Zwaan?"
+                        },
+                        "questionAnswers": [
+                          {
+                            "messageText": "Johannes Pieter Kleiweg de Zwaan (1875-1971) was a doctor and Dutch physical anthropologist",
+                            "sourceId": "Wikipedia De Zwaan"
+                          },
+                          {
+                            "messageText": " He developed a strong interest for the Dutch Indies and physical anthropology after assisting the German ethnologist Alfred Maass during his journey to Sumatra in 1907.",
+                            "sourceId": "Fenneke Sysling, 2016"
+                          },
+                          {
+                            "messageText": "He is also at the origin of one of the largest plaster casts collection in the Netherlands. ",
+                            "sourceId": "Fenneke Sysling, 2016"
+                          },
+                          {
+                            "messageText": " Kleiweg de Zwaan played an important role for physical anthropology by creating an institutional basis for the discipline at the Colonial Institute.",
+                            "sourceId": "Fenneke Sysling, 2016"
+                          }
+                        ],
+                        "keywords": [
+                          "Kleiweg de Zwaan",
+                          "Plaster casts",
+                          "Physical anthropology"
+                        ]
+                      },
+                      {
+                        "id": "q3",
+                        "questionAsked": {
+                          "messageText": "What are the Nias/Indies masks?"
+                        },
+                        "questionAnswers": [
+                          {
+                            "messageText": "They are part of one of the few and largest collection of plaster casts in the Netherlands.",
+                            "sourceId": "Fenneke Sysling, 2016"
+                          },
+                          {
+                            "messageText": "The Nias/Indies masks are part of the 158 face casts made by Johannes Pieter Kleiweg de Zwaan in the Dutch Indies",
+                            "sourceId": "Fenneke Sysling, 2015a"
+                          },
+                          {
+                            "messageText": "The Nias masks are 64 plaster face casts of Nias islanders.",
+                            "sourceId": "Fenneke Sysling, 2015a"
+                          },
+                          {
+                            "messageText": " The Indies casts are 67 masks representing the faces of people from diverse backgrounds in Batavia",
+                            "sourceId": "Fenneke Sysling, 2015a"
+                          }
+                        ],
+                        "keywords": [
+                          "Nias/Indies masks",
+                          "Plaster casts",
+                          "Kleiweg de Zwaan"
+                        ],
+                        "followUpQuestions": [
+                          {
+                            "id": "q17",
+                            "questionAsked": {
+                              "messageText": "When and where were the Nias/Indies masks made?"
+                            },
+                            "questionAnswers": [
+                              {
+                                "messageText": "The molds of the Nias masks were made on the island of Nias on the western coast of Sumatra, Indonesia in 1909.",
+                                "sourceId": "Fenneke Sysling, 2015a"
+                              },
+                              {
+                                "messageText": " The molds of Indies masks were made in the the Glodok prison in colonial capital of Batavia in 1910.",
+                                "sourceId": "Fenneke Sysling, 2015a"
+                              },
+                              {
+                                "messageText": "It is not clear where in the Netherlands the plaster casts were made from the molds. It is possible they were made in a plaster workshop in The Hague or in the Rijskmuseum several months after Kleiweg de Zwaan’s return from his journey.",
+                                "sourceId": "Fenneke Sysling, 2015b"
+                              }
+                            ],
+                            "keywords": [
+                              "Nias/Indies masks",
+                              "Plaster casts"
+                            ]
+                          },
+                          {
+                            "id": "q18",
+                            "questionAsked": {
+                              "messageText": "Where were the Nias/Indies casts exhibited?"
+                            },
+                            "questionAnswers": [
+                              {
+                                "messageText": "Through time, the Nias/Indies casts have travelled to different owners, museums, and colonial institutions.",
+                                "sourceId": "Fenneke Sysling, 2015b"
+                              },
+                              {
+                                "messageText": " After creating the Nias/Indies casts, de Zwaan gave 140 casts to the National ethnographic museum in Leiden and the Anatomical laboratory in Amsterdam in 1911.",
+                                "sourceId": "Fenneke Sysling, 2015b"
+                              },
+                              {
+                                "messageText": "He also gave 130 casts to the Anatomical institute of University of Utrecht in 1912 and 131 masks to the Colonial institute in Amsterdam eight years later.",
+                                "sourceId": "Fenneke Sysling, 2015b"
+                              }
+                            ],
+                            "keywords": [
+                              "Nias/Indies masks",
+                              "Plaster casts"
+                            ]
+                          },
+                          {
+                            "id": "q19",
+                            "questionAsked": {
+                              "messageText": "What are the Minangkabau masks?"
+                            },
+                            "questionAnswers": [
+                              {
+                                "messageText": "The Minangkabau masks are the other half of the 158 face casts made by Johannes Pieter Kleiweg de Zwaan.",
+                                "sourceId": "Fenneke Sysling, 2015a"
+                              },
+                              {
+                                "messageText": "They consist of 57 plaster face casts of Minangkabau men. The Minangkabau masks' molds were casted in 1907 in Sumatra.",
+                                "sourceId": "Fenneke Sysling, 2015a"
+                              },
+                              {
+                                "messageText": "The Minangkabau molds were sent to Germany for them to be immediately casted in the Royal Museums Plaster Workshop in Berlin.",
+                                "sourceId": "Fenneke Sysling, 2015b"
+                              }
+                            ],
+                            "keywords": [
+                              "Nias/Indies masks",
+                              "Minangkabau masks",
+                              "Plaster casts"
+                            ]
+                          },
+                          {
+                            "id": "q20",
+                            "questionAsked": {
+                              "messageText": "Where were the Minangkabau casts exhibited?"
+                            },
+                            "questionAnswers": [
+                              {
+                                "messageText": "After their creation, the Minangkabau casts were first exhibited in Germany, at the Berlin Society for Ethnology.",
+                                "sourceId": "Fenneke Sysling, 2015b"
+                              },
+                              {
+                                "messageText": "De Zwaan also gave some of the masks to Lodewijk Bolk (his former professor). Bolk sent copies of the masks to de Zwaan to be included in his doctoral dissertation.",
+                                "sourceId": "Fenneke Sysling, 2015b"
+                              },
+                              {
+                                "messageText": " De Zwaan did not get the copies in time. He then sent them to the National Ethnographic Museum in Leiden and in the Anatomical Museum of the University of Amsterdam in 1908 to be exhibited.",
+                                "sourceId": "Fenneke Sysling, 2015b"
+                              }
+                            ],
+                            "keywords": [
+                              "Minangkabau masks",
+                              "Plaster casts"
+                            ]
+                          },
+                          {
+                            "id": "q21",
+                            "questionAsked": {
+                              "messageText": "Where are the Minangkabau and Nias/Indies masks exhibited now?"
+                            },
+                            "questionAnswers": [
+                              {
+                                "messageText": "Three museums in the Netherlands hold the 158 casts created by de Zwaan.",
+                                "sourceId": "Fenneke Sysling, 2015b"
+                              },
+                              {
+                                "messageText": "The Utrecht University Museum holds 131 Nias/indies masks.",
+                                "sourceId": "Fenneke Sysling, 2015b"
+                              },
+                              {
+                                "messageText": " The Anatomical (Vrolik) Museum in Amsterdam has 93 Nias masks and 49 Minangkabau masks in its collection.",
+                                "sourceId": "Fenneke Sysling, 2015b"
+                              },
+                              {
+                                "messageText": "The Anatomical (Vrolik) Museum in Amsterdam has 93 Nias masks and 49 Minangkabau masks in its collection.",
+                                "sourceId": "Fenneke Sysling, 2015b"
+                              }
+                            ],
+                            "keywords": [
+                              "Nias/Indies masks",
+                              "Minangkabau masks",
+                              "Plaster casts"
+                            ]
+                          },
+                          {
+                            "id": "q21",
+                            "questionAsked": {
+                              "messageText": "Whose faces are represented by the Nias/Indies masks?"
+                            },
+                            "questionAnswers": [
+                              {
+                                "messageText": "The Nias/Indies masks represent the faces of Nias islanders and men from different backgrounds from the Glodok prison in Batavia.",
+                                "sourceId": "Fenneke Sysling, 2015a"
+                              },
+                              {
+                                "messageText": "Mask number 1 (upper left) represents the face of Hono-Hono. Hono-Hono came from a village of Dana Mola in the Island of Nias .",
+                                "sourceId": "Rijksmuseum"
+                              },
+                              {
+                                "messageText": "After 1907, the island of Nias went under the Dutch colonial rule and its associated military violence. Hono-Hono was one of the men who experienced this rule, and became objectified by a Dutch anthropologist exploring ways to identify the characteristics of ethnicity",
+                                "sourceId": "Rijksmuseum"
+                              },
+                              {
+                                "messageText": "In this context, his face was molded. As illustrated by his facial expression and that of the other masks, this was an unpleasant experience for him.",
+                                "sourceId": "Rijksmuseum"
+                              }
+                            ],
+                            "keywords": [
+                              "Nias/Indies masks",
+                              "Plaster casts",
+                              "de Zwaan"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       }
     ]
   }

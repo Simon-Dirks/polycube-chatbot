@@ -1,0 +1,30 @@
+[
+  {
+    "id": "wikipedia",
+    "name": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Surrealism",
+    "role": "Online Encyclopedia",
+    "imageUrl": "wikipedia.png"
+  },
+  {
+    "id": "marieke",
+    "name": "Marieke van de Berg",
+    "url": "#",
+    "role": "Art Critic",
+    "imageUrl": "marieke.png"
+  },
+  {
+    "id": "tim",
+    "name": "Tim Teunisse",
+    "url": "#",
+    "role": "Art History Student",
+    "imageUrl": "tim.png"
+  },
+  {
+    "id": "maia",
+    "name": "Maia Kenney",
+    "url": "#",
+    "role": "Assistant Curator",
+    "imageUrl": "maia-kenney.png"
+  }
+]

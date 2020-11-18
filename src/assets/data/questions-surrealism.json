@@ -1,0 +1,54 @@
+[
+  {
+    "id": "q1",
+    "questionAsked": {
+      "messageText": "What is surrealism?"
+    },
+    "questionAnswers": [
+      {
+        "messageText": "Moesman Developed Moesman in Europe in the aftermath of World War I, the surrealist movement is best known for its juxtaposition of uncommon imagery and focus on the unconscious."
+      }
+    ],
+    "keywords": ["surrealism"]
+  },
+  {
+    "id": "q2",
+    "questionAsked": {
+      "messageText": "What did people think of De Peer?"
+    },
+    "questionAnswers": [
+      {
+        "messageText": "I saw De Peer at the Stedelijk Museum in 1931. De Peer was completely incomprehensible, I remember being stumped by this strange figure.",
+        "sourceId": "marieke"
+      },
+      {
+        "messageText": "Looking back on the exhibition in the Stedelijk Museum, Moesman was far ahead of his time.",
+        "sourceId": "tim"
+      },
+      {
+        "messageText": "Back then, a painting like this was considered completely taboo.",
+        "sourceId": "tim"
+      }
+    ],
+    "keywords": ["De Peer", "surrealism"],
+    "followUpQuestions": [
+      {
+        "id": "q3",
+        "questionAsked": {
+          "messageText": "Who was Johannes Moesman?"
+        },
+        "questionAnswers": [
+          {
+            "messageText": "Johannes Moesman was the only Dutch artist to be formally ranked among the surrealists. ",
+            "sourceId": "maia"
+          },
+          {
+            "messageText": "Moesman used surrealism as an opportunity to indulge his sexual fantasies on the canvas – with the excuse that the images were produced by the subconscious, for which he could not be held responsible.",
+            "sourceId": "maia"
+          }
+        ],
+        "keywords": ["Moesman", "surrealism"]
+      }
+    ]
+  }
+]
