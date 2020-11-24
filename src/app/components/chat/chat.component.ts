@@ -12,7 +12,7 @@ import {CameraModalComponent} from './camera-modal/camera-modal.component';
     selector: 'app-chat',
     templateUrl: './chat.component.html',
     styleUrls: ['./chat.component.scss'],
-    encapsulation: ViewEncapsulation.ShadowDom
+    encapsulation: ViewEncapsulation.None
 })
 export class ChatComponent implements OnInit {
     @ViewChild('chatMessages', {static: false}) chatMessagesElRef: ElementRef;

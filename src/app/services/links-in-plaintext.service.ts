@@ -66,7 +66,6 @@ export class LinksInPlaintextService {
         plainText: string
     ) {
         const keywordsToReplace = this.getKeywordIndices(plainText);
-        console.log(keywordsToReplace);
 
         let currentIdx = 0;
         for (const keywordToReplace of keywordsToReplace) {

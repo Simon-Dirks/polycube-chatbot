@@ -10,6 +10,7 @@ import {QuestionOptionComponent} from './question-option/question-option.compone
 import {WebcamModule} from 'ngx-webcam';
 import {CameraModalComponent} from './camera-modal/camera-modal.component';
 import {TextWithLinksModule} from '../../directives/text-with-links.module';
+import {CubeModule} from '../polycube/components/cube.component/cube.module';
 
 @NgModule({
     imports: [
@@ -18,7 +19,8 @@ import {TextWithLinksModule} from '../../directives/text-with-links.module';
         IonicModule,
         HeaderBarModule,
         WebcamModule,
-        TextWithLinksModule
+        TextWithLinksModule,
+        CubeModule
     ],
     declarations: [ChatComponent, CameraModalComponent, ChatMessageBubbleComponent, QuestionOptionComponent]
 })
