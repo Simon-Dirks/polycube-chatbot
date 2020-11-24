@@ -5,5 +5,6 @@ export interface ChatMessageModel {
     sentByBot?: boolean;
     imageUrl?: string;
     sourceId?: string;
+    polycubeFile?: string;
     source?: SourceModel;
 }

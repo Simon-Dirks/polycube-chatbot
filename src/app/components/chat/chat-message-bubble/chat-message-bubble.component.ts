@@ -1,6 +1,7 @@
 import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 import {ChatMessageModel} from '../../../models/chat-message.model';
 import {SourceService} from '../../../services/source.service';
+import {environment} from '../../../../environments/environment';
 
 @Component({
     selector: 'app-chat-message-bubble',
@@ -11,6 +12,7 @@ import {SourceService} from '../../../services/source.service';
 export class ChatMessageBubbleComponent implements OnInit {
     @Input() messageIdx: number;
     @Input() message: ChatMessageModel;
+    environment = environment;
 
     constructor(private sources: SourceService) {
     }

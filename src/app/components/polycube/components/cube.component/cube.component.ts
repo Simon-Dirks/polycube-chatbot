@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, ViewChild, ViewEncapsulation} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Input, ViewChild, ViewEncapsulation} from '@angular/core';
 import * as THREE from 'three-full';
 import * as TWEEN from '@tweenjs/tween.js';
 import * as D3 from 'd3';
@@ -49,23 +49,25 @@ export class CubeComponent implements AfterViewInit {
     @ViewChild('tooltip', {static: true}) tooltip: ElementRef;
 
     title = 'PolyCube';
-    showModal: boolean = false;
+    showModal = false;
 
     // processing & updating
-    processingChange: boolean = true;
-    processingMessage: string = 'Loading dataset...';
+    processingChange = true;
+    processingMessage = 'Loading dataset...';
 
-    previewPanel: boolean = false;
+    previewPanel = false;
     previewItem: any;
 
     currentlySelectedCategory: string;
     currentlySelectedDateExtent: Array<Date>;
 
+    @Input() polycubeFile: string;
+
     // ThreeJS things
     gui: GUI;
     webGLScene: THREE.Scene;
     cssScene: THREE.Scene;
-    camera: THREE.Camera; //PerspectiveCamera or OrthographicCamera;
+    camera: THREE.Camera; // PerspectiveCamera or OrthographicCamera;
     perspectiveCamera: THREE.PerspectiveCamera;
     orthographicCamera: THREE.OrthographicCamera;
     light: THREE.Light;
@@ -83,11 +85,11 @@ export class CubeComponent implements AfterViewInit {
     currentViewState: VIEW_STATES = VIEW_STATES.POLY_CUBE;
 
     // data management
-    loadingDataset: boolean = true;
-    dataLoaded: boolean = false;
+    loadingDataset = true;
+    dataLoaded = false;
 
     // error management
-    errorOccurred: boolean = false;
+    errorOccurred = false;
     errorMessage: string;
 
     // animation duration
@@ -95,7 +97,7 @@ export class CubeComponent implements AfterViewInit {
 
     // frontend things
     categoriesAndColors: Map<string, string>;
-    showColorCodingLegend: boolean = true;
+    showColorCodingLegend = true;
     categories: Array<string>;
 
     // inject google
@@ -176,13 +178,13 @@ export class CubeComponent implements AfterViewInit {
         this.controls.enableZoom = true;
         this.controls.zoomSpeed = 1.2;
 
-        //hold initial camera and position values
+        // hold initial camera and position values
         this.camToSave = {};
         this.camToSave.position = this.camera.position.clone();
         this.camToSave.rotation = this.camera.rotation.clone();
         this.camToSave.controlCenter = this.controls.target.clone();
 
-    };
+    }
 
     /**
      * Initializes the component with the default (Cushman) dataset
@@ -190,19 +192,25 @@ export class CubeComponent implements AfterViewInit {
      */
     initDataset(): void {
         this.loadingDataset = true;
-        let _id = CUBE_CONFIG.DATA_SET.id; // Cushman dataset ID
+        const _id = CUBE_CONFIG.DATA_SET.id; // Cushman dataset ID
         // perform request to get spreadsheet json
         // parse it when done and pass to datamanager
         // this.google.load(_id).then((success: any) => {
 
-        this.localFiles.load(_id).then(async (success: any) => {
+        this.localFiles.load(this.polycubeFile).then(async (success: any) => {
             // only overwrite if we have no data in the data manager
             // otherwise we probably got data from another endpoint
-            if (!this.dataManager.data) {
-                console.log('no data init cushman');
-                this.dataManager.data = success;
-                this.gps.defaultDataSet();
-            }
+
+            // DISABLED TO SUPPORT MULTIPLE POLYCUBES
+            // if (!this.dataManager.data) {
+            //     console.log('no data init cushman');
+            //     this.dataManager.data = success;
+            //     this.gps.defaultDataSet();
+            // }
+
+            this.dataManager.data = success;
+            this.gps.defaultDataSet();
+
             this.processingChange = false;
             this.processingMessage = '';
 
@@ -238,7 +246,7 @@ export class CubeComponent implements AfterViewInit {
      */
     updateDataset(): void {
         this.loadingDataset = true;
-        let id = this.spreadsheetId.nativeElement.value;
+        const id = this.spreadsheetId.nativeElement.value;
         if (!id) {
             console.error('No spredsheet id provided.');
             this.loadingDataset = false;
@@ -272,7 +280,7 @@ export class CubeComponent implements AfterViewInit {
         this.nCube = new NetCube(this.dataManager, this.camera, this.webGLScene, this.cssScene);
         // setup gps service
         (this.nCube as NetCube).setGraphPositionService(this.gps);
-    };
+    }
 
     /**
      * This function is called when the dataset has been changed
@@ -283,12 +291,12 @@ export class CubeComponent implements AfterViewInit {
         this.gCube.updateData();
         this.sCube.updateData();
         this.nCube.updateData();
-    };
+    }
 
     addEventListeners = () => {
         this.webGLContainer.nativeElement.addEventListener('click', ($event) => {
             $event.preventDefault();
-            let foundItem = this.getClickedItem($event);
+            const foundItem = this.getClickedItem($event);
             if (foundItem) {
 
                 this.previewItem = {
@@ -314,7 +322,7 @@ export class CubeComponent implements AfterViewInit {
                 this.closePreview();
             }
         });
-    };
+    }
 
     getClickedItem = ($event) => {
         // look for item across cubes
@@ -333,7 +341,7 @@ export class CubeComponent implements AfterViewInit {
             this.nCube.highlightObject(foundItem.id);
         }
         return foundItem;
-    };
+    }
 
     /**
      * Open / Close the preview panel (details on the side)
@@ -351,7 +359,7 @@ export class CubeComponent implements AfterViewInit {
      * @param id Node ID
      */
     getRelatedNode(id: number): any {
-        let found = this.dataManager.data.find((d: any) => {
+        const found = this.dataManager.data.find((d: any) => {
             return d.id === id;
         });
 
@@ -359,7 +367,7 @@ export class CubeComponent implements AfterViewInit {
     }
 
     selectNode(id: number): void {
-        let selected = this.dataManager.data.find((d: any) => {
+        const selected = this.dataManager.data.find((d: any) => {
             return d.id === id;
         });
 
@@ -385,13 +393,13 @@ export class CubeComponent implements AfterViewInit {
     getPrevious(): void {
         this.processingChange = true;
         this.processingMessage = 'Loading image...';
-        let currentItem = this.previewItem;
+        const currentItem = this.previewItem;
 
-        let foundIdx = this.dataManager.data.map((d: any) => {
+        const foundIdx = this.dataManager.data.map((d: any) => {
             return d.id;
         }).indexOf(currentItem.id);
 
-        let foundItem = this.dataManager.data[(foundIdx - 1) % this.dataManager.data.length];
+        const foundItem = this.dataManager.data[(foundIdx - 1) % this.dataManager.data.length];
 
         this.previewItem = {
             title: `Picture #${foundItem.id}`, // foundItem.title is empty so just use ID
@@ -412,12 +420,12 @@ export class CubeComponent implements AfterViewInit {
     getNext(): void {
         this.processingChange = true;
         this.processingMessage = 'Loading image...';
-        let currentItem = this.previewItem;
-        let foundIdx = this.dataManager.data.map((d: any) => {
+        const currentItem = this.previewItem;
+        const foundIdx = this.dataManager.data.map((d: any) => {
             return d.id;
         }).indexOf(currentItem.id);
 
-        let foundItem = this.dataManager.data[(foundIdx + 1) % this.dataManager.data.length];
+        const foundItem = this.dataManager.data[(foundIdx + 1) % this.dataManager.data.length];
 
         this.previewItem = {
             title: `Picture #${foundItem.id}`, // foundItem.title is empty so just use ID
@@ -491,7 +499,7 @@ export class CubeComponent implements AfterViewInit {
                 this.sCube.updateNodeColor(change.nodeColor);
                 this.nCube.updateNodeColor(change.nodeColor);
 
-                //update timeline color
+                // update timeline color
                 if (change.nodeColor === 'temporal') {
                     this.timelineColor(true);
                 } else {
@@ -531,7 +539,7 @@ export class CubeComponent implements AfterViewInit {
                 (this.sCube as SetCube).updateLayout(change.sLayout);
             }
 
-            //hull button
+            // hull button
             if (change.hull == true) {
                 if (!(this.sCube as SetCube).getHullState()) {
                     (this.sCube as SetCube).drawHull();
@@ -581,7 +589,7 @@ export class CubeComponent implements AfterViewInit {
             this.sCube.transitionSTC();
             this.nCube.transitionSTC();
 
-            //rotate camera to STC
+            // rotate camera to STC
             this.transitionSTCCamera();
         });
 
@@ -591,7 +599,7 @@ export class CubeComponent implements AfterViewInit {
             this.nCube.transitionJP();
 
 
-            //rotate camera to JP
+            // rotate camera to JP
             this.transitionJPCamera();
 
         });
@@ -602,30 +610,30 @@ export class CubeComponent implements AfterViewInit {
             this.gCube.transitionSI();
             this.sCube.transitionSI();
             this.nCube.transitionSI();
-            //this.sCube.updateNodeColor('temporal'); //FIXME: need to be called after SI is finished in SCUBE
+            // this.sCube.updateNodeColor('temporal'); //FIXME: need to be called after SI is finished in SCUBE
 
 
-            //rotate camera to SI
+            // rotate camera to SI
             this.transitionSICamera();
         });
-    };
+    }
 
     /**
      * Rotate Camera to SI view
      */
     transitionSICamera(): void {
 
-        //update timeline color as true
+        // update timeline color as true
         this.timelineColor(true);
 
         this.restoreCamera(this.camToSave.position, this.camToSave.rotation, this.camToSave.controlCenter);
 
-        //stop rotation
+        // stop rotation
         this.controls.enableRotate = false;
 
-        let duration = 1000;
-        let targetVector = new THREE.Vector3();
-        let tweenPos = new TWEEN.Tween(this.camera.position);
+        const duration = 1000;
+        const targetVector = new THREE.Vector3();
+        const tweenPos = new TWEEN.Tween(this.camera.position);
         targetVector.set(1000, 4826, 428);
         tweenPos.to(targetVector, duration);
         tweenPos.start().onComplete(() => {
@@ -644,16 +652,16 @@ export class CubeComponent implements AfterViewInit {
      */
 
     transitionSTCCamera(): void {
-        //update timeline color as false
+        // update timeline color as false
         this.timelineColor(false);
         this.restoreCamera(this.camToSave.position, this.camToSave.rotation, this.camToSave.controlCenter);
 
-        //allow rotation
+        // allow rotation
         this.controls.enableRotate = true;
 
-        let duration = 1000;
-        let targetVector = new THREE.Vector3();
-        let tweenPos = new TWEEN.Tween(this.camera.position);
+        const duration = 1000;
+        const targetVector = new THREE.Vector3();
+        const tweenPos = new TWEEN.Tween(this.camera.position);
         targetVector.set(800, 912, 4755);
         tweenPos.to(targetVector, duration);
         tweenPos.start().onComplete(() => {
@@ -673,11 +681,11 @@ export class CubeComponent implements AfterViewInit {
         // stop rotation
         this.controls.enableRotate = false;
 
-        let duration = 1000;
-        let targetVector = new THREE.Vector3();
-        let targetVector2 = new THREE.Vector3();
-        let tweenPos = new TWEEN.Tween(this.camera.position);
-        let tweenRot = new TWEEN.Tween(this.camera.position);
+        const duration = 1000;
+        const targetVector = new THREE.Vector3();
+        const targetVector2 = new THREE.Vector3();
+        const tweenPos = new TWEEN.Tween(this.camera.position);
+        const tweenRot = new TWEEN.Tween(this.camera.position);
 
         // targetVector.set(1000, 4826, 428);
         targetVector.set(1000, 10826, 428);
@@ -703,15 +711,15 @@ export class CubeComponent implements AfterViewInit {
         this.sCube.transitionSTC();
         this.nCube.transitionSTC();
 
-        //rotate camera to STC
+        // rotate camera to STC
         this.transitionSTCCamera();
     }
 
     restoreCamera(position: THREE.Vector3, rotation: THREE.Euler, controlCenter: THREE.Vector3) {
-        let targetVector = new THREE.Vector3();
-        let targetVector2 = new THREE.Vector3();
-        let tweenPos = new TWEEN.Tween(this.camera.position);
-        let tweenRot = new TWEEN.Tween(this.camera.position);
+        const targetVector = new THREE.Vector3();
+        const targetVector2 = new THREE.Vector3();
+        const tweenPos = new TWEEN.Tween(this.camera.position);
+        const tweenRot = new TWEEN.Tween(this.camera.position);
 
         // this.camera.position.set(position.x, position.y, position.z);
         targetVector.set(position.x, position.y, position.z);
@@ -747,8 +755,8 @@ export class CubeComponent implements AfterViewInit {
     }
 
     usePerspectiveCamera(): void {
-        let cameraPosition = this.orthographicCamera.position.clone();
-        let cameraZoom = this.orthographicCamera.zoom;
+        const cameraPosition = this.orthographicCamera.position.clone();
+        const cameraZoom = this.orthographicCamera.zoom;
 
         this.camera = this.perspectiveCamera;
 
@@ -760,8 +768,8 @@ export class CubeComponent implements AfterViewInit {
     }
 
     useOrthographicCamera(): void {
-        let cameraPosition = this.perspectiveCamera.position.clone();
-        let cameraZoom = this.perspectiveCamera.zoom;
+        const cameraPosition = this.perspectiveCamera.position.clone();
+        const cameraZoom = this.perspectiveCamera.zoom;
 
         this.camera = this.orthographicCamera;
         this.camera.zoom = cameraZoom;
@@ -780,18 +788,18 @@ export class CubeComponent implements AfterViewInit {
         this.gCube.hideCube();
         this.sCube.hideCube();
         this.nCube.hideCube();
-    };
+    }
 
     /**
      * This function is used to position the camera
      */
     positionCamera = (): void => {
-        let targetVector = new THREE.Vector3();
-        let camLookAt = new THREE.Vector3(0, 0, -1);
+        const targetVector = new THREE.Vector3();
+        const camLookAt = new THREE.Vector3(0, 0, -1);
         let cubePos: THREE.Vector3;
 
-        let tweenPos = new TWEEN.Tween(this.camera.position);
-        let tweenLookAt = new TWEEN.Tween(camLookAt.applyQuaternion(this.camera.quaternion));
+        const tweenPos = new TWEEN.Tween(this.camera.position);
+        const tweenLookAt = new TWEEN.Tween(camLookAt.applyQuaternion(this.camera.quaternion));
 
         switch (this.currentViewState) {
             case 'GEO_CUBE':
@@ -836,7 +844,7 @@ export class CubeComponent implements AfterViewInit {
         //       this.controls.update();
         //    });
         // });
-    };
+    }
 
     closePicture(): void {
         this.modalContainer.nativeElement.style.display = 'none';
@@ -862,7 +870,7 @@ export class CubeComponent implements AfterViewInit {
         this.nCube.updateView(this.currentViewState);
 
         this.positionCamera();
-    };
+    }
 
     /**
      * Starts the animation (rendering) loop
@@ -870,7 +878,7 @@ export class CubeComponent implements AfterViewInit {
     animate = () => {
         requestAnimationFrame(this.animate);
         this.render();
-    };
+    }
 
     /**
      * Function called each iteration of the rendering loop

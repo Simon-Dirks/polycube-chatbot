@@ -7,7 +7,8 @@
     "questionAnswers": [
       {
         "messageText": "Physical anthropology aimed at measuring the human body to study the origin, evolution, and the diversity of people.",
-        "sourceId": "Britannica"
+        "sourceId": "Britannica",
+        "polycubeFile": "masks_through_time_filtered"
       },
       {
         "messageText": "This was done by measuring skeletons and living bodies, taking photographs of people, and making plaster casts.",
@@ -26,7 +27,8 @@
         "questionAnswers": [
           {
             "messageText": "There was a strong interest for physical anthropology in the Netherlands in the late 19th century. Its popularity reached a peak during the 1920s and 30s.",
-            "sourceId": "Fenneke Sysling, 2015a"
+            "sourceId": "Fenneke Sysling, 2015a",
+            "polycubeFile": "cushman"
           },
           {
             "messageText": "The first Dutch colonial physical anthropologists were inspired by French and German anthropologists.",
