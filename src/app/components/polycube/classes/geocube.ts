@@ -8,6 +8,7 @@ import * as TWEEN from '@tweenjs/tween.js';
 import * as D3 from 'd3';
 import * as mapboxgl from 'mapbox-gl';
 import * as moment from 'moment';
+import { v4 as uuidv4 } from 'uuid';
 import {environment} from '../../../../environments/environment';
 
 export class GeoCube implements PolyCube {
@@ -255,7 +256,8 @@ export class GeoCube implements PolyCube {
      */
     assembleData(): void {
         this.dm.data.forEach((d: any) => { this.setMap.add(d.category_1); });
-        this.cubeGroupCSS.add(this.createMap());
+        const uniqueId = uuidv4();
+        this.cubeGroupCSS.add(this.createMap(undefined, undefined, uniqueId));
         // this.timeLinearScale(some_date) gives us the vertical axis coordinate of the point
         let bounds = new mapboxgl.LngLatBounds();
 

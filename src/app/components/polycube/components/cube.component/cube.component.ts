@@ -15,7 +15,6 @@ import {CUBE_CONFIG} from '../../cube.config';
 import * as moment from 'moment';
 import {LocalFileLoaderService} from '../../services/local-file-loader.service';
 
-
 @Component({
     selector: 'app-cube',
     templateUrl: './cube.component.html',
@@ -573,15 +572,14 @@ export class CubeComponent implements AfterViewInit {
         });
 
         // Disable these cubes by default
-        // this.setCubeView(VIEW_STATES.SET_CUBE);
-        // this.setCubeView(VIEW_STATES.NET_CUBE);
+        this.setCubeView(VIEW_STATES.SET_CUBE);
+        this.setCubeView(VIEW_STATES.NET_CUBE);
 
 
         this.gui.stcBtn.addEventListener('click', () => {
             this.gCube.transitionSTC();
             this.sCube.transitionSTC();
             this.nCube.transitionSTC();
-
 
             //rotate camera to STC
             this.transitionSTCCamera();
