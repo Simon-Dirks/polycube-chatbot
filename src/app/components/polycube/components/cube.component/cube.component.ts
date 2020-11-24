@@ -170,7 +170,7 @@ export class CubeComponent implements AfterViewInit {
 
         this.camera.up.set(0, 1, 0);
         // this.camera.position.set(200, 200, 4800); // for orthocamera
-        this.camera.position.set(803, 912, 4755);
+        this.camera.position.set(-5000, 1500, 900);
         this.camera.lookAt(this.webGLScene.position.x, this.webGLScene.position.y, this.webGLScene.position.z);
 
         this.controls = new THREE.OrbitControls(this.camera, this.webGLRenderer.domElement);
