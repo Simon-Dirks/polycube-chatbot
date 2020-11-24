@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {BehaviorSubject} from 'rxjs';
 import {ChatMessageModel} from '../models/chat-message.model';
 import {environment} from '../../environments/environment';
+import {SourceModel} from '../models/source.model';
 
 @Injectable({
     providedIn: 'root',
@@ -14,6 +15,12 @@ export class ChatService {
     constructor(private http: HttpClient) {
         this.chatMessages = new BehaviorSubject<ChatMessageModel[]>([]);
         this.typingBotMessage = new BehaviorSubject<boolean>(false);
+
+        const startMessage: ChatMessageModel = {
+            messageText: 'Welcome to the exhibition. This ArtBot Guide will introduce the Nias/Indies masks and their history.',
+            sentByBot: true
+        };
+        this.sendMessage(startMessage);
     }
 
     sendMessage(message: ChatMessageModel) {

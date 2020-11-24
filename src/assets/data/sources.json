@@ -7,19 +7,19 @@
   },
   {
     "id": "Fenneke Sysling, 2015a",
-    "name": " Fenneke Sysling,",
+    "name": " Fenneke Sysling",
     "url": " https://journals.openedition.org/rhsh/2595?lang=fr",
     "role": "Assistant Professor in History"
   },
   {
     "id": "Fenneke Sysling, 2015b",
-    "name": " Fenneke Sysling,",
+    "name": " Fenneke Sysling",
     "url": "#",
     "role": "Assistant Professor in History"
   },
   {
     "id": "Fenneke Sysling, 2016",
-    "name": " Fenneke Sysling,",
+    "name": " Fenneke Sysling",
     "url": "#",
     "role": "Assistant Professor in History"
   },
@@ -58,5 +58,12 @@
     "name": "Rijksmuseum",
     "url": " https://www.rijksmuseum.nl/en/collection/NG-C-2012-3",
     "role": "Museum"
+  },
+  {
+    "id": "peabodyhsi",
+    "name": " Peabody Museum,",
+    "url": "https://peabodyhsi.wordpress.com/2020/11/19/racism-in-science-and-rankes-bronze-skulls/",
+    "role": "online article"
   }
 ]
+

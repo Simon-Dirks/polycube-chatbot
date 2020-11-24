@@ -50,7 +50,11 @@ export class QuestionService {
         let filteredQuestions: QuestionModel[] = this.availableQuestions.getValue();
         if (this.filterInput) {
             filteredQuestions = filteredQuestions.filter((question) => {
-                return question.questionAsked.messageText.toLowerCase().indexOf(this.filterInput.toLowerCase()) !== -1;
+                const filterInput = this.filterInput.toLowerCase();
+                const questionIncludesFilter = question.questionAsked.messageText.toLowerCase().indexOf(filterInput) !== -1;
+                const questionKeywords = question.keywords.map((keyword) => keyword.toLowerCase());
+                const questionKeywordsIncludesFilter = questionKeywords.includes(filterInput);
+                return questionIncludesFilter || questionKeywordsIncludesFilter;
             });
         }
         return filteredQuestions;

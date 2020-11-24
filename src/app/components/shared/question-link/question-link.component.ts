@@ -11,13 +11,14 @@ export class QuestionLinkComponent implements OnInit {
     @Input() linkText: string;
 
     constructor(private router: Router,
-                private questionService: QuestionService) {
+                private questionService: QuestionService ) {
     }
 
     ngOnInit() {
     }
 
     onLinkClicked() {
+        this.questionService.filterInput = this.linkText;
         this.questionService.makeQuestionsAvailableByKeyword(this.linkText);
     }
 

@@ -25,6 +25,11 @@ export class QuestionOptionComponent implements OnInit {
             return [questionAsked, '', ''];
         }
 
+        const questionContainsFilterInput = questionAsked.toLowerCase().includes(this.questionService.filterInput.toLowerCase());
+        if(!questionContainsFilterInput) {
+            return [questionAsked, '', ''];
+        }
+
         const filterInputIdx = questionAsked.toLowerCase().indexOf(this.questionService.filterInput.toLowerCase());
         const beforeFilteredWord = questionAsked.substring(0, filterInputIdx);
         const afterFilteredWord = questionAsked.substring(filterInputIdx + this.questionService.filterInput.length, questionAsked.length);
