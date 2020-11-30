@@ -20,7 +20,13 @@ export class ChatService {
             messageText: 'Welcome to the exhibition. This ArtBot Guide will introduce the Nias/Indies masks and their history.',
             sentByBot: true
         };
+
+        const disclaimerMessage: ChatMessageModel = {
+            messageText: 'Despite the best efforts of the researchers to include the perspective of the locals, limited written resources were available on this topic. Therefore, please note that the information in the chatbot mostly relies on Western sources.',
+            sentByBot: true
+        };
         this.sendMessage(startMessage);
+        this.sendMessage(disclaimerMessage);
     }
 
     sendMessage(message: ChatMessageModel) {
