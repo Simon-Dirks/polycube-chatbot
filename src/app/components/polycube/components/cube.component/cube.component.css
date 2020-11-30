@@ -212,6 +212,7 @@ button:focus {
 .time-slice-label {
     opacity: 1;
     transition: all 0.25s ease-in-out;
+    color: black;
 }
 
 .animateButton,
