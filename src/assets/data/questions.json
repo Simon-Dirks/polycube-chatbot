@@ -6,9 +6,9 @@
     },
     "questionAnswers": [
       {
-        "messageText": "Physical anthropology aimed at measuring the human body to study the origin, evolution, and the diversity of people.",
+        "messageText": "Physical anthropology is a science that aimed at measuring the human body to study the origin, evolution, and the diversity of people.",
         "sourceId": "Britannica",
-        "polycubeFile": "masks_through_time_filtered"
+        "polycubeFile": "anthropologists-t0"
       },
       {
         "messageText": "This was done by measuring skeletons and living bodies, taking photographs of people, and making plaster casts.",
@@ -69,7 +69,8 @@
             "questionAnswers": [
               {
                 "messageText": "After their journeys, anthropologists published several books and articles about their measurements and findings.",
-                "sourceId": "Jill"
+                "sourceId": "Jill",
+                "polycubeFile": "dutch-anthropologist-exhibition-output"
               },
               {
                 "messageText": "Photographs and plaster casts were used to share knowledge about the Dutch Indies and their inhabitants in a way that is easier to understand for the public than texts and numbers.",
@@ -89,7 +90,7 @@
           {
             "id": "q11",
             "questionAsked": {
-              "messageText": " How did the locals react to anthropological practices?"
+              "messageText": "How did the locals react to anthropological practices?"
             },
             "questionAnswers": [
               {
@@ -191,15 +192,15 @@
                   {
                     "id": "q16",
                     "questionAsked": {
-                      "messageText": "Why are these physical anthropological practices controversial?"
+                      "messageText": "Why are these physical anthropological practices controversial today?"
                     },
                     "questionAnswers": [
                       {
-                        "messageText": "Research in physical anthropology is controversial because it ranked people based on their ethnicities, which is racist.",
+                        "messageText": "Research in physical anthropology is controversial because it ranked people based on their ethnicities.",
                         "sourceId": "peabodyhsi"
                       },
                       {
-                        "messageText": "These racists beliefs were part of the scientific and societal beliefs at the time but of course, not all physical anthropologists were racists.",
+                        "messageText": "These beliefs were part of the scientific and societal beliefs at the time but of course, not all physical anthropologists agreed with these beliefs.",
                         "sourceId": "peabodyhsi"
                       }
                     ],
@@ -256,7 +257,8 @@
       },
       {
         "messageText": "The 64 Nias masks are plaster face casts of Nias islanders and the 67 Indies masks are plaster casts of the faces of people from diverse backgrounds in Batavia ",
-        "sourceId": "Fenneke Sysling, 2015a"
+        "sourceId": "Fenneke Sysling, 2015a",
+        "polycubeFile": "masks_through_time"
       }
     ],
     "keywords": [
@@ -272,11 +274,12 @@
         },
         "questionAnswers": [
           {
-            "messageText": " The molds of the Nias masks were made on the island of Nias on the Western coast of Sumatra, Indonesia in 1909 and the molds of Indies masks were made in the the Glodok prison in colonial capital of Batavia in 1910 ",
-            "sourceId": "Fenneke Sysling, 2015a"
+            "messageText": "The molds of the Nias masks were made on the island of Nias on the Western coast of Sumatra, Indonesia in 1909 and the molds of Indies masks were made in the the Glodok prison in colonial capital of Batavia in 1910 ",
+            "sourceId": "Fenneke Sysling, 2015a",
+            "polycubeFile": "masks_through_time"
           },
           {
-            "messageText": " The molds of the Nias/Indes masks were then used to generate the plaster casts exhibited in the museum. ",
+            "messageText": "The molds of the Nias/Indes masks were then used to generate the plaster casts exhibited in the museum. ",
             "sourceId": "Fenneke Sysling, 2015b"
           },
           {
@@ -321,12 +324,13 @@
       {
         "id": "q16",
         "questionAsked": {
-          "messageText": "Why are the Nias/Indies masks controversial?"
+          "messageText": "Why are the Nias/Indies masks controversial today?"
         },
         "questionAnswers": [
           {
-            "messageText": " The Nias/Indies masks were used to classify and categorize locals from the colonies.",
-            "sourceId": "Fenneke Sysling, 2015a"
+            "messageText": "The Nias/Indies masks were used to classify and categorize locals from the colonies.",
+            "sourceId": "Fenneke Sysling, 2015a",
+            "polycubeFile": "next-step-polycube-nias-masks-output"
           },
           {
             "messageText": "Anthropologists claimed this was for science. However, these classifications were used to justify the Dutch's domination over the Dutch Indies.",
