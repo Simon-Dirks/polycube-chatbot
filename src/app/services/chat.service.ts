@@ -16,6 +16,10 @@ export class ChatService {
         this.chatMessages = new BehaviorSubject<ChatMessageModel[]>([]);
         this.typingBotMessage = new BehaviorSubject<boolean>(false);
 
+        this.sendWelcomeMessages();
+    }
+
+    sendWelcomeMessages() {
         const startMessage: ChatMessageModel = {
             messageText: 'Welcome to the exhibition. This ArtBot Guide will introduce the Nias/Indies masks and their history.',
             sentByBot: true
@@ -25,8 +29,15 @@ export class ChatService {
             messageText: 'Despite the best efforts of the researchers to include the perspective of the locals, limited written resources were available on this topic. Therefore, please note that the information in the chatbot mostly relies on Western sources.',
             sentByBot: true
         };
+
+        const sourcesMessage: ChatMessageModel = {
+            messageText: 'If you want to learn more about the Nias/Indies masks and physical anthropology, you can click on the source’s title on the top right of each message to access the original source.',
+            sentByBot: true
+        };
+
         this.sendMessage(startMessage);
         this.sendMessage(disclaimerMessage);
+        this.sendMessage(sourcesMessage);
     }
 
     sendMessage(message: ChatMessageModel) {

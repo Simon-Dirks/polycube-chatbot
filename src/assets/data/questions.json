@@ -6,13 +6,21 @@
     },
     "questionAnswers": [
       {
-        "messageText": "Physical anthropology is a science that aimed at measuring the human body to study the origin, evolution, and the diversity of people.",
-        "sourceId": "Britannica",
-        "polycubeFile": "anthropologists-t0"
+        "messageText": "Physical anthropology is a science that measured the human anatomy to study the origin, evolution, and the diversity of people.",
+        "sourceId": "Britannica"
       },
       {
-        "messageText": "This was done by measuring skeletons and living bodies, taking photographs of people, and making plaster casts.",
+        "messageText": "These anatomical measurements were used to categorize and compare people based on their race.",
+        "sourceId": "Encyclopedia.com"
+      },
+      {
+        "messageText": "In the Netherlands, physical anthropology was used to collect information about the colonies.",
         "sourceId": "Fenneke Sysling, 2015a"
+      },
+      {
+        "messageText": "Dutch anthropologists measured skeletons and living bodies, took photographs of people, and made plaster casts during their travels to the Dutch Indies.",
+        "sourceId": "Fenneke Sysling, 2015a",
+        "polycubeFile": "anthropologists-t0"
       }
     ],
     "keywords": [
@@ -26,12 +34,12 @@
         },
         "questionAnswers": [
           {
-            "messageText": "There was a strong interest for physical anthropology in the Netherlands in the late 19th century. Its popularity reached a peak during the 1920s and 30s.",
+            "messageText": "Physical anthropology developed in the late 19th century in the Netherlands. It was especially popular during the 1920s and 30s.",
             "sourceId": "Fenneke Sysling, 2015a",
             "polycubeFile": "anthropologists-t0"
           },
           {
-            "messageText": "The first Dutch colonial physical anthropologists were inspired by French and German anthropologists.",
+            "messageText": "The first Dutch anthropologists were inspired by French and German anthropologists.",
             "sourceId": "Fenneke Sysling, 2015a"
           }
         ],
@@ -43,7 +51,7 @@
           {
             "id": "q8",
             "questionAsked": {
-              "messageText": "Why did physical anthropology take off in the Netherlands?"
+              "messageText": "Why did physical anthropology become popular in the Netherlands?"
             },
             "questionAnswers": [
               {
@@ -51,7 +59,11 @@
                 "sourceId": "Fenneke Sysling, 2015a"
               },
               {
-                "messageText": "Physical anthropologists took this opportunity to conduct fieldwork in these regions to gather information about locals from the colonies.",
+                "messageText": "Physical anthropologists were part of the colonial forces in Indonesia and took this opportunity to collect information about the locals.",
+                "sourceId": "Fenneke Sysling, 2015a"
+              },
+              {
+                "messageText": "They said this was important because little was known about the anatomy of the locals.",
                 "sourceId": "Fenneke Sysling, 2015a"
               }
             ],
@@ -62,18 +74,37 @@
             ]
           },
           {
-            "id": "q23",
+            "id": "q24",
             "questionAsked": {
-              "messageText": "How did Dutch anthropologists share their findings with to wider audiences?"
+              "messageText": "What is the relationship between science and colonialism in the Netherlands?"
             },
             "questionAnswers": [
               {
-                "messageText": "After their journeys, anthropologists published several books and articles about their measurements and findings.",
+                "messageText": "From the 17th century to the 20th century, the Netherlands established control over indigenous people from parts of Africa, Asia, and North and South America. The main motivation of this colonization was commercial.",
+                "sourceId": "Encyclopedia Dutch Empire"
+              },
+              {
+                "messageText": "Since the 19th century, colonial officials used science including physical anthropology to justify this colonial expansion. They said that scientific discoveries could be used to help the colonies and their inhabitants because they were less advanced.",
+                "sourceId": "Andrew Goss"
+              }
+            ],
+            "keywords": [
+              "Netherlands"
+            ]
+          },
+          {
+            "id": "q23",
+            "questionAsked": {
+              "messageText": "How did Dutch anthropologists share their findings to the public?"
+            },
+            "questionAnswers": [
+              {
+                "messageText": "After their travels, anthropologists published books and articles explaining their findings.",
                 "sourceId": "Jill",
                 "polycubeFile": "dutch-anthropologist-exhibition-output"
               },
               {
-                "messageText": "Photographs and plaster casts were used to share knowledge about the Dutch Indies and their inhabitants in a way that is easier to understand for the public than texts and numbers.",
+                "messageText": "Photographs and plaster casts were used to share information about the Dutch Indies and their inhabitants in a way that was easier to understand than texts and numbers.",
                 "sourceId": "Fenneke Sysling, 2016"
               },
               {
@@ -88,25 +119,49 @@
             ]
           },
           {
+            "id": "q16",
+            "questionAsked": {
+              "messageText": "Why are these physical anthropological practices controversial today?"
+            },
+            "questionAnswers": [
+              {
+                "messageText": "These anthropological practices are controversial because they were used in the context of the Dutch colonial rule, which forced indigenous people under their power by violence and committed war crimes.",
+                "sourceId": "Van Reybrouck"
+              },
+              {
+                "messageText": "Anthropological practices were also used to created hierarchies of people based on their races and ethnicities.",
+                "sourceId": "peabodyhsi"
+              },
+              {
+                "messageText": "These hierarchical ideas about humans were part of the scientific and societal beliefs at the time. They were not new and dated from the 18th century but through time, ideas about what the characteristics of races were, who represented them, and what this meant changed.",
+                "sourceId": "peabodyhsi"
+              }
+            ],
+            "keywords": [
+              "Plaster casts",
+              "Physical anthropology"
+            ]
+          },
+          {
             "id": "q11",
             "questionAsked": {
               "messageText": "How did the locals react to anthropological practices?"
             },
             "questionAnswers": [
               {
-                "messageText": "Locals reacted to measures in different ways. Some were scared and others were curious.",
+                "messageText": "Locals reacted to measurements in different ways. Some were scared and others were curious.",
                 "sourceId": "Fenneke Sysling, 2016"
               },
               {
-                "messageText": "Some locals also started doing these type of measurements on other people, thus doing physical anthropology themselves.",
+                "messageText": "Some locals also started doing these types of measurements on other people.",
                 "sourceId": "Fenneke Sysling, 2016"
               },
               {
-                "messageText": "Plaster casting was unpleasant and could be painful. Therefore, many locals were scared to undergo them and there are not a lot of collections of these plaster casts.",
+                "messageText": "Plaster casting was unpleasant and could be painful. Many locals were scared to experience them but they were persuaded to collaborate by the colonial administration.",
                 "sourceId": "Fenneke Sysling, 2016"
               },
               {
-                "messageText": "Photography encountered less resistance than measurements and plaster casts because it did not involve close contact and was not painful.",
+                "messageText": "Locals resisted less to photography because it did not involve close contact and was not painful.",
                 "sourceId": "Fenneke Sysling, 2016"
               }
             ],
@@ -120,11 +175,15 @@
               {
                 "id": "q12",
                 "questionAsked": {
-                  "messageText": "How did (Dutch) anthropologists convince the locals to be the subject of their practices?"
+                  "messageText": "How did Dutch anthropologists convince the locals to be the subject of their practices?"
                 },
                 "questionAnswers": [
                   {
-                    "messageText": "Some anthropologists promised gifts and sometimes used tricks to convince locals who did not want to be measured, photographed, or have their bodies plastered.",
+                    "messageText": "Anthropologists conducted many measurements on prisoners because they did not resist because they were disciplined by the colonial administration.",
+                    "sourceId": "Fenneke Sysling, 2015a"
+                  },
+                  {
+                    "messageText": "Some anthropologists also promised gifts and sometimes used tricks to convince locals who did not want to be measured, photographed, or have their bodies plastered.",
                     "sourceId": "Fenneke Sysling, 2016"
                   },
                   {
@@ -141,23 +200,23 @@
               {
                 "id": "q7",
                 "questionAsked": {
-                  "messageText": "What is the role of plaster cast in this physical anthropology?"
+                  "messageText": "What is the role of plaster cast in physical anthropology?"
                 },
                 "questionAnswers": [
                   {
-                    "messageText": "Plaster casts had three purposes",
+                    "messageText": "Plaster casts had three purposes.",
                     "sourceId": "Fenneke Sysling, 2015a"
                   },
                   {
-                    "messageText": "First, they were used to study the measures of the body of people of different ethnicities. Physical anthropologists considered that plaster casts represented the human body in the most objective way.",
+                    "messageText": "First, they were used to study the measures of the body of people of different races and ethnicities. Physical anthropologists considered plaster casts the most objective representation of the human body.",
                     "sourceId": "Fenneke Sysling, 2015a"
                   },
                   {
-                    "messageText": "Second, one plaster cast would be used as an example of what people of a specific ethnicity looked like.",
+                    "messageText": "Second, one plaster cast was used as an example of what people of a specific racial group looked like.",
                     "sourceId": "Fenneke Sysling, 2015a"
                   },
                   {
-                    "messageText": " Third, as a group, casts were used to teach observers to learn to recognize the features of different ethnicities.",
+                    "messageText": "Third, groups of plaster casts were used to teach observers to recognize the characteristics of different racial groups.",
                     "sourceId": "Fenneke Sysling, 2015a"
                   }
                 ],
@@ -173,35 +232,20 @@
                     },
                     "questionAnswers": [
                       {
-                        "messageText": "Plaster casts were not only used in colonial contexts. They were already used in the Middle Ages to make masks of the dead or death masks.",
-                        "sourceId": " Fenneke Sysling, 2016"
+                        "messageText": "Plaster casts were not only used in colonial contexts. They were already used in the Middle-Ages to make masks of the deads.",
+                        "sourceId": "Fenneke Sysling, 2016"
                       },
                       {
-                        "messageText": "Later, these practices were also used in art and by the special effects industry for movies and television. ",
-                        "sourceId": "Wikipedia Plaster Casts"
+                        "messageText": "By the 18th century, wax models or moulages were also used to educate students in anatomy and dermatology.",
+                        "sourceId": "Smithsonianmag"
                       },
                       {
                         "messageText": "The dentist Jansje Gretha Schuiringa also used these practices in a medical context to make face prosthetics.",
                         "sourceId": "Jet"
-                      }
-                    ],
-                    "keywords": [
-                      "Plaster casts"
-                    ]
-                  },
-                  {
-                    "id": "q16",
-                    "questionAsked": {
-                      "messageText": "Why are these physical anthropological practices controversial today?"
-                    },
-                    "questionAnswers": [
-                      {
-                        "messageText": "Research in physical anthropology is controversial because it ranked people based on their ethnicities.",
-                        "sourceId": "peabodyhsi"
                       },
                       {
-                        "messageText": "These beliefs were part of the scientific and societal beliefs at the time but of course, not all physical anthropologists agreed with these beliefs.",
-                        "sourceId": "peabodyhsi"
+                        "messageText": "Later, these practices were also used in art and by the special effects industry in movies and television.",
+                        "sourceId": "Wikipedia Plaster Casts"
                       }
                     ],
                     "keywords": [
@@ -224,14 +268,14 @@
     "questionAnswers": [
       {
         "messageText": "The maker of the Nias/Indies masks was the doctor and Dutch physical anthropologist Johannes Pieter Kleiweg de Zwaan (1875-1971).",
-        "sourceId": " Wikipedia De Zwaan"
+        "sourceId": "Wikipedia De Zwaan"
       },
       {
-        "messageText": "He developed a strong interest for the Dutch Indies and physical anthropology after helping the German ethnologist Alfred Maass during his journey to Sumatra in 1907. ",
-        "sourceId": "Fenneke Sysling, 2016"
+        "messageText": "The central part of his work was to compare the anatomy of inhabitants from the colonies in the Dutch Indies and New Guinea to identify and categorize these groups’ racial characteristics, racial mixing, and the history of their migrations.",
+        "sourceId": "Wikipedia De Zwaan"
       },
       {
-        "messageText": "Kleiweg de Zwaan played an important role in the institutionalization of physical anthropology when he was at the head of the Colonial Institute.",
+        "messageText": "De Zwaan was part of the colonial administration at the time and played an important role in the institutionalization of physical anthropology when he was head of the Colonial Institute in Amsterdam.",
         "sourceId": "Fenneke Sysling, 2016"
       }
     ],
@@ -248,17 +292,16 @@
     },
     "questionAnswers": [
       {
-        "messageText": "They are part of one of the few and largest collection of plaster casts in the Netherlands.",
+        "messageText": "The Nias/Indies masks are part of one of the few and largest collections of plaster casts in the Netherlands.",
         "sourceId": "Fenneke Sysling, 2016"
       },
       {
-        "messageText": "The Nias/Indies masks are part of the 158 face casts made by Johannes Pieter Kleiweg de Zwaan in the Dutch Indies",
+        "messageText": "The Nias/Indies masks are part of the 158 face casts made by Johannes Pieter Kleiweg de Zwaan in the Dutch Indies.",
         "sourceId": "Fenneke Sysling, 2015a"
       },
       {
-        "messageText": "The 64 Nias masks are plaster face casts of Nias islanders and the 67 Indies masks are plaster casts of the faces of people from diverse backgrounds in Batavia ",
-        "sourceId": "Fenneke Sysling, 2015a",
-        "polycubeFile": "masks_through_time"
+        "messageText": "The Nias masks are 64 casts from the island of Nias and the Indies masks are 67 casts of people from different backgrounds from the colonial capital of Batavia.",
+        "sourceId": "Fenneke Sysling, 2015a"
       }
     ],
     "keywords": [
@@ -274,16 +317,16 @@
         },
         "questionAnswers": [
           {
-            "messageText": "The molds of the Nias masks were made on the island of Nias on the Western coast of Sumatra, Indonesia in 1909 and the molds of Indies masks were made in the the Glodok prison in colonial capital of Batavia in 1910 ",
+            "messageText": "The moulds of the Nias masks were made on the island of Nias on the Western coast of Sumatra, Indonesia in 1909 and the moulds of Indies masks were made in the Glodok prison in the colonial capital of Batavia in 1910.",
             "sourceId": "Fenneke Sysling, 2015a",
             "polycubeFile": "masks_through_time"
           },
           {
-            "messageText": "The molds of the Nias/Indes masks were then used to generate the plaster casts exhibited in the museum. ",
+            "messageText": "The moulds of the Nias/Indies masks were used to make the plaster casts exhibited in the museum.",
             "sourceId": "Fenneke Sysling, 2015b"
           },
           {
-            "messageText": "It is possible the casts were made in The Hague or in the Rijskmuseum several months after Kleiweg de Zwaan returned from his journey but this is uncertain.",
+            "messageText": "It is possible the casts were made in The Hague or the Rijksmuseum several months after Kleiweg de Zwaan returned from his travel, but this is uncertain.",
             "sourceId": "Fenneke Sysling, 2015b"
           }
         ],
@@ -303,15 +346,15 @@
             "sourceId": "Fenneke Sysling, 2015a"
           },
           {
-            "messageText": "Mask number 1 (upper left) represents the face of Hono-Hono, a villager from Dana Mola in the Island of Nias .",
+            "messageText": "Mask number 1 (upper left) represents the face of Hono-Hono, a villager from Dana Mola in the island of Nias.",
             "sourceId": "Rijksmuseum"
           },
           {
-            "messageText": "Hono-Hono was one of the men who experienced the military violence of the Dutch Colonial rule. ",
+            "messageText": "Hono-Hono was one of the men who experienced the military violence of the Dutch colonial rule.",
             "sourceId": "Rijksmuseum"
           },
           {
-            "messageText": "His face was molded by a Kleiweg de Zwaan, which was an unpleasant experience for him, as illustrated by his facial expression.",
+            "messageText": "His face was moulded by Kleiweg de Zwaan, which was an unpleasant experience for him, as illustrated by his expression.",
             "sourceId": "Rijksmuseum"
           }
         ],
@@ -328,16 +371,20 @@
         },
         "questionAnswers": [
           {
-            "messageText": "The Nias/Indies masks were used to classify and categorize locals from the colonies.",
-            "sourceId": "Fenneke Sysling, 2015a",
+            "messageText": "In the 21st century, information about the Nias/Indies masks continue to be shared in museums, books, and articles. Some of these sources are now more critical of the masks.",
+            "sourceId": "Jill",
             "polycubeFile": "next-step-polycube-nias-masks-output"
           },
           {
-            "messageText": "Anthropologists claimed this was for science. However, these classifications were used to justify the Dutch's domination over the Dutch Indies.",
+            "messageText": "Today, anthropologists and historians have pointed to the problematic aspect of using the Nias/Indies masks to classify and categorize inhabitants from the colonies.",
             "sourceId": "Fenneke Sysling, 2015a"
           },
           {
-            "messageText": "De Zwaan and other people in the past and present have used these masks to gather and share information about the Nias/Batavia locals without their consent.",
+            "messageText": "Moreover, the moulding of face casts was a violent act of colonial oppression.",
+            "sourceId": "Fenneke Sysling, 2015a"
+          },
+          {
+            "messageText": "De Zwaan and other people in the past and present have also used these masks to study and share information about the Nias/Batavia locals without their consent.",
             "sourceId": "Fenneke Sysling, 2015a"
           }
         ],
