@@ -31,7 +31,7 @@ export class ChatService {
         };
 
         const sourcesMessage: ChatMessageModel = {
-            messageText: 'If you want to learn more about the Nias/Indies masks and physical anthropology, you can click on the source’s title on the top right of each message to access the original source.',
+            messageText: 'If you want to learn more about the Nias/Indies masks and physical anthropology, you can click on the source’s title on the top left of each message to access the original source.',
             sentByBot: true
         };
 
