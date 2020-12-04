@@ -10,7 +10,7 @@
         "sourceId": "Britannica"
       },
       {
-        "messageText": "These anatomical measurements were used to categorize and compare people based on their race.",
+        "messageText": "These anatomical measurements were used to categorize and compare people based on their races.",
         "sourceId": "Encyclopedia.com"
       },
       {
@@ -18,7 +18,7 @@
         "sourceId": "Fenneke Sysling, 2015a"
       },
       {
-        "messageText": "Dutch anthropologists measured skeletons and living bodies, took photographs of people, and made plaster casts during their travels to the Dutch Indies.",
+        "messageText": "Dutch anthropologists measured skeletons and living bodies, took photographs of people, and made plaster casts during their travels to the Dutch Indies, present-day Indonesia.",
         "sourceId": "Fenneke Sysling, 2015a",
         "polycubeFile": "anthropologists-t0"
       }
@@ -59,7 +59,7 @@
                 "sourceId": "Fenneke Sysling, 2015a"
               },
               {
-                "messageText": "Physical anthropologists were part of the colonial forces in Indonesia and took this opportunity to collect information about the locals.",
+                "messageText": "Physical anthropologists were part of the colonial forces in Indonesia and took the opportunity to collect information about the locals.",
                 "sourceId": "Fenneke Sysling, 2015a"
               },
               {
@@ -80,7 +80,7 @@
             },
             "questionAnswers": [
               {
-                "messageText": "From the 17th century to the 20th century, the Netherlands established control over indigenous people from parts of Africa, Asia, and North and South America. The main motivation of this colonization was commercial.",
+                "messageText": "From the 17th century to the 20th century, the Netherlands established control over indigenous people from parts of Africa, Asia, and North and South America. The main motivation of this colonization was of economic interest.",
                 "sourceId": "Encyclopedia Dutch Empire"
               },
               {
@@ -119,17 +119,17 @@
             ]
           },
           {
-            "id": "q30",
+            "id": "q16",
             "questionAsked": {
               "messageText": "Why are these physical anthropological practices controversial today?"
             },
             "questionAnswers": [
               {
-                "messageText": "These anthropological practices are controversial because they were used in the context of the Dutch colonial rule, which forced indigenous people under their power by violence and committed war crimes.",
+                "messageText": "These anthropological practices are controversial because they were used in the context of the Dutch colonial rule, which forced indigenous people under their power by force.",
                 "sourceId": "Van Reybrouck"
               },
               {
-                "messageText": "Anthropological practices were also used to created hierarchies of people based on their races and ethnicities.",
+                "messageText": "Anthropological practices were also used to create hierarchies of people based on their races and ethnicities.",
                 "sourceId": "peabodyhsi"
               },
               {
@@ -161,7 +161,7 @@
                 "sourceId": "Fenneke Sysling, 2016"
               },
               {
-                "messageText": "Locals resisted less to photography because it did not involve close contact and was not painful.",
+                "messageText": "Locals resisted less to photography because it was not intrusive or painful.",
                 "sourceId": "Fenneke Sysling, 2016"
               }
             ],
@@ -365,13 +365,13 @@
         ]
       },
       {
-        "id": "q16",
+        "id": "q27",
         "questionAsked": {
           "messageText": "Why are the Nias/Indies masks controversial today?"
         },
         "questionAnswers": [
           {
-            "messageText": "In the 21st century, information about the Nias/Indies masks continue to be shared in museums, books, and articles. Some of these sources are now more critical of the masks.",
+            "messageText": "In the 21st century, information about the Nias/Indies masks continue to be shared in museums, books, and articles. Some of these sources are now more critical of the masks because of the publically contested nature of colonial heritage.",
             "sourceId": "Jill",
             "polycubeFile": "next-step-polycube-nias-masks-output"
           },
