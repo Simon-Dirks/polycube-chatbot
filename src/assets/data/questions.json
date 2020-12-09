@@ -80,7 +80,7 @@
             },
             "questionAnswers": [
               {
-                "messageText": "From the 17th century to the 20th century, the Netherlands established control over indigenous people from parts of Africa, Asia, and North and South America. The main motivation of this colonization was of economic interest.",
+                "messageText": "From the 17th century to the 20th century, the Netherlands established control over indigenous people from parts of Africa, Asia, and North and South America. The main motivation of this colonization was economic interest.",
                 "sourceId": "Encyclopedia Dutch Empire"
               },
               {
@@ -125,7 +125,7 @@
             },
             "questionAnswers": [
               {
-                "messageText": "These anthropological practices are controversial because they were used in the context of the Dutch colonial rule, which forced indigenous people under their power by force.",
+                "messageText": "These anthropological practices are controversial because they were used in the context of the Dutch colonial rule, which forced indigenous people under their power to participate.",
                 "sourceId": "Van Reybrouck"
               },
               {
@@ -380,7 +380,7 @@
             "sourceId": "Fenneke Sysling, 2015a"
           },
           {
-            "messageText": "Moreover, the moulding of face casts was a violent act of colonial oppression.",
+            "messageText": "Moreover, the moulding of face casts can be viewed as an act of colonial oppression.",
             "sourceId": "Fenneke Sysling, 2015a"
           },
           {
@@ -391,6 +391,21 @@
         "keywords": [
           "Nias/Indies masks",
           "de Zwaan"
+        ]
+      },
+      {
+        "id": "q28",
+        "questionAsked": {
+          "messageText": "How can museums decolonize the Nias/Indies masks?"
+        },
+        "questionAnswers": [
+          {
+            "messageText": "In an effort to decolonize the masks, the University Museum and the Rijksmuseum are starting a project to reconnect the Nias masks to their place of origin (in Nias) and their inhabitants.",
+            "sourceId": "DUIC"
+          }
+        ],
+        "keywords": [
+          "Nias/Indies masks"
         ]
       }
     ]
