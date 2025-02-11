@@ -1,9 +1,9 @@
-import {ChatMessageModel} from './chat-message.model';
+import { ChatMessageModel } from "./chat-message.model";
 
 export interface QuestionModel {
-    id: string;
-    questionAsked: ChatMessageModel;
-    questionAnswers: ChatMessageModel[];
-    followUpQuestions?: QuestionModel[];
-    keywords?: string[];
+  id: string;
+  questionAsked: ChatMessageModel;
+  questionAnswers: ChatMessageModel[];
+  followUpQuestions?: QuestionModel[];
+  keywords?: string[];
 }

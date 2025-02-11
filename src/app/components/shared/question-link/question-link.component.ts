@@ -1,25 +1,24 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-import {QuestionService} from '../../../services/question.service';
+import { Component, Input, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { QuestionService } from "../../../services/question.service";
 
 @Component({
-    selector: 'app-question-link',
-    templateUrl: './question-link.component.html',
-    styleUrls: ['./question-link.component.scss'],
+  selector: "app-question-link",
+  templateUrl: "./question-link.component.html",
+  styleUrls: ["./question-link.component.scss"],
 })
 export class QuestionLinkComponent implements OnInit {
-    @Input() linkText: string;
+  @Input() linkText: string;
 
-    constructor(private router: Router,
-                private questionService: QuestionService ) {
-    }
+  constructor(
+    private router: Router,
+    private questionService: QuestionService
+  ) {}
 
-    ngOnInit() {
-    }
+  ngOnInit() {}
 
-    onLinkClicked() {
-        this.questionService.filterInput = this.linkText;
-        this.questionService.makeQuestionsAvailableByKeyword(this.linkText);
-    }
-
+  onLinkClicked() {
+    this.questionService.filterInput = this.linkText;
+    this.questionService.makeQuestionsAvailableByKeyword(this.linkText);
+  }
 }

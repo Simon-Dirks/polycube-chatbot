@@ -3,19 +3,18 @@
     <ion-buttons slot="end">
       <ion-button (click)="closeModal()">Close</ion-button>
     </ion-buttons>
-    <ion-title>
-      Artwork Scan
-    </ion-title>
+    <ion-title> Artwork Scan </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <webcam [trigger]="camera.trigger.asObservable()"
-          [allowCameraSwitch]="false"
-          (imageClick)="camera.trigger.next()"
-          (imageCapture)="camera.handleImage($event)"
-          [captureImageData]="false"
-          (initError)="camera.handleInitError($event)">
+  <webcam
+    [trigger]="camera.trigger.asObservable()"
+    [allowCameraSwitch]="false"
+    (imageClick)="camera.trigger.next()"
+    (imageCapture)="camera.handleImage($event)"
+    [captureImageData]="false"
+    (initError)="camera.handleInitError($event)"
+  >
   </webcam>
 </ion-content>
-

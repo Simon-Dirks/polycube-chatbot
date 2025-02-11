@@ -1,26 +1,25 @@
-import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
-import {CameraService} from '../../../services/camera.service';
-import {ModalController} from '@ionic/angular';
+import { Component, Input, OnInit, ViewEncapsulation } from "@angular/core";
+import { CameraService } from "../../../services/camera.service";
+import { ModalController } from "@ionic/angular";
 
 @Component({
-    selector: 'app-camera-modal',
-    templateUrl: './camera-modal.component.html',
-    styleUrls: ['./camera-modal.component.scss'],
-    encapsulation: ViewEncapsulation.ShadowDom
+  selector: "app-camera-modal",
+  templateUrl: "./camera-modal.component.html",
+  styleUrls: ["./camera-modal.component.scss"],
+  encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class CameraModalComponent implements OnInit {
-    @Input() controller: ModalController
+  @Input() controller: ModalController;
 
-    constructor(public camera: CameraService) {
-    }
+  constructor(public camera: CameraService) {}
 
-    ngOnInit() {
-        this.camera.trigger.asObservable().subscribe(() => {
-            this.controller.dismiss();
-        });
-    }
+  ngOnInit() {
+    this.camera.trigger.asObservable().subscribe(() => {
+      this.controller.dismiss();
+    });
+  }
 
-    closeModal() {
-        this.controller.dismiss();
-    }
+  closeModal() {
+    this.controller.dismiss();
+  }
 }

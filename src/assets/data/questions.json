@@ -23,9 +23,7 @@
         "polycubeFile": "anthropologists-t0"
       }
     ],
-    "keywords": [
-      "Physical anthropology"
-    ],
+    "keywords": ["Physical anthropology"],
     "followUpQuestions": [
       {
         "id": "q6",
@@ -43,10 +41,7 @@
             "sourceId": "Fenneke Sysling, 2015a"
           }
         ],
-        "keywords": [
-          "Physical anthropology",
-          "Netherlands"
-        ],
+        "keywords": ["Physical anthropology", "Netherlands"],
         "followUpQuestions": [
           {
             "id": "q8",
@@ -88,9 +83,7 @@
                 "sourceId": "Andrew Goss"
               }
             ],
-            "keywords": [
-              "Netherlands"
-            ]
+            "keywords": ["Netherlands"]
           },
           {
             "id": "q23",
@@ -137,10 +130,7 @@
                 "sourceId": "peabodyhsi"
               }
             ],
-            "keywords": [
-              "Plaster casts",
-              "Physical anthropology"
-            ]
+            "keywords": ["Plaster casts", "Physical anthropology"]
           },
           {
             "id": "q11",
@@ -191,11 +181,7 @@
                     "sourceId": "Fenneke Sysling, 2016"
                   }
                 ],
-                "keywords": [
-                  "Dutch anthropologists",
-                  "Netherlands",
-                  "locals"
-                ]
+                "keywords": ["Dutch anthropologists", "Netherlands", "locals"]
               },
               {
                 "id": "q7",
@@ -220,10 +206,7 @@
                     "sourceId": "Fenneke Sysling, 2015a"
                   }
                 ],
-                "keywords": [
-                  "Physical anthropology",
-                  "Plaster casts"
-                ],
+                "keywords": ["Physical anthropology", "Plaster casts"],
                 "followUpQuestions": [
                   {
                     "id": "q13",
@@ -248,9 +231,7 @@
                         "sourceId": "Wikipedia Plaster Casts"
                       }
                     ],
-                    "keywords": [
-                      "Plaster casts"
-                    ]
+                    "keywords": ["Plaster casts"]
                   }
                 ]
               }
@@ -279,11 +260,7 @@
         "sourceId": "Fenneke Sysling, 2016"
       }
     ],
-    "keywords": [
-      "de Zwaan",
-      "Plaster casts",
-      "Physical anthropology"
-    ]
+    "keywords": ["de Zwaan", "Plaster casts", "Physical anthropology"]
   },
   {
     "id": "q3",
@@ -304,11 +281,7 @@
         "sourceId": "Fenneke Sysling, 2015a"
       }
     ],
-    "keywords": [
-      "Nias/Indies masks",
-      "Plaster casts",
-      "de Zwaan"
-    ],
+    "keywords": ["Nias/Indies masks", "Plaster casts", "de Zwaan"],
     "followUpQuestions": [
       {
         "id": "q17",
@@ -330,10 +303,7 @@
             "sourceId": "Fenneke Sysling, 2015b"
           }
         ],
-        "keywords": [
-          "Nias/Indies masks",
-          "Plaster casts"
-        ]
+        "keywords": ["Nias/Indies masks", "Plaster casts"]
       },
       {
         "id": "q21",
@@ -358,11 +328,7 @@
             "sourceId": "Rijksmuseum"
           }
         ],
-        "keywords": [
-          "Nias/Indies masks",
-          "Plaster casts",
-          "de Zwaan"
-        ]
+        "keywords": ["Nias/Indies masks", "Plaster casts", "de Zwaan"]
       },
       {
         "id": "q27",
@@ -388,10 +354,7 @@
             "sourceId": "Fenneke Sysling, 2015a"
           }
         ],
-        "keywords": [
-          "Nias/Indies masks",
-          "de Zwaan"
-        ]
+        "keywords": ["Nias/Indies masks", "de Zwaan"]
       },
       {
         "id": "q28",
@@ -404,9 +367,7 @@
             "sourceId": "DUIC"
           }
         ],
-        "keywords": [
-          "Nias/Indies masks"
-        ]
+        "keywords": ["Nias/Indies masks"]
       }
     ]
   }

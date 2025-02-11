@@ -1,45 +1,76 @@
-<div [ngClass]="['chat-message-bubble',
-                message.sentByBot ? 'bot-chat-message-bubble' : 'user-chat-message-bubble', 'ion-padding-top']">
+<div
+  [ngClass]="[
+    'chat-message-bubble',
+    message.sentByBot ? 'bot-chat-message-bubble' : 'user-chat-message-bubble',
+    'ion-padding-top'
+  ]"
+>
+  <!-- Source / author -->
+  <div
+    class="chat-author ion-margin-top"
+    *ngIf="message.sentByBot && message.source && message.source.name"
+  >
+    <a
+      [href]="message.source.url"
+      class="chat-source-url"
+      target="_blank"
+      *ngIf="message.source.url"
+    >
+      <img
+        [src]="
+          '/assets/img/sources/' +
+          (message.source.imageUrl ? message.source.imageUrl : 'unknown.png')
+        "
+        alt="{{ message.source.name }} Image"
+        class="chat-author-image ion-margin-end"
+      />
+    </a>
+    <img
+      [src]="
+        '/assets/img/sources/' +
+        (message.source.imageUrl ? message.source.imageUrl : 'unknown.png')
+      "
+      alt="{{ message.source.name }} Image"
+      class="chat-author-image ion-margin-end"
+      *ngIf="!message.source.url"
+    />
 
-    <!-- Source / author -->
-    <div class="chat-author ion-margin-top" *ngIf="message.sentByBot && message.source && message.source.name">
-        <a [href]="message.source.url"
-           class="chat-source-url"
-           target="_blank"
-           *ngIf="message.source.url">
-            <img [src]="'/assets/img/sources/' + (message.source.imageUrl ? message.source.imageUrl : 'unknown.png')"
-                 alt="{{message.source.name}} Image"
-                 class="chat-author-image ion-margin-end">
-        </a>
-        <img [src]="'/assets/img/sources/' + (message.source.imageUrl ? message.source.imageUrl : 'unknown.png')"
-             alt="{{message.source.name}} Image"
-             class="chat-author-image ion-margin-end"
-             *ngIf="!message.source.url">
+    <p class="ion-no-margin chat-author-name">
+      <a
+        [href]="message.source.url"
+        class="chat-source-url"
+        target="_blank"
+        *ngIf="message.source.url"
+      >
+        <strong>{{ message.source.name }}</strong>
+      </a>
+      <strong *ngIf="!message.source.url">{{ message.source.name }}</strong
+      ><br />
+      <em class="chat-source-role"> {{ message.source.role }}</em>
+    </p>
+  </div>
 
-        <p class="ion-no-margin chat-author-name">
-            <a [href]="message.source.url"
-               class="chat-source-url"
-               target="_blank"
-               *ngIf="message.source.url">
-                <strong>{{message.source.name}}</strong>
-            </a>
-            <strong *ngIf="!message.source.url">{{message.source.name}}</strong><br/>
-            <em class="chat-source-role"> {{message.source.role}}</em>
-        </p>
+  <div>
+    <div class="polycube-container" *ngIf="message.polycubeFile">
+      <app-cube
+        [polycubeFile]="
+          environment.polycubeFilePath + message.polycubeFile + '.json'
+        "
+      ></app-cube>
     </div>
 
-    <div>
-        <div class="polycube-container" *ngIf="message.polycubeFile">
-            <app-cube [polycubeFile]="environment.polycubeFilePath + message.polycubeFile + '.json'" ></app-cube>
-        </div>
+    <img
+      src="{{ message.imageUrl }}"
+      alt="Chat message image"
+      class="ion-margin-bottom chat-message-img"
+      *ngIf="message.imageUrl && messageIdx === 1"
+    />
 
-        <img src="{{message.imageUrl}}" alt="Chat message image"
-             class="ion-margin-bottom chat-message-img"
-             *ngIf="message.imageUrl && messageIdx === 1"/>
-
-        <p class="ion-no-margin ion-margin-vertical"
-           *ngFor="let text of message.messageText.split('|')">
-            <span [appTextWithLinks]="text"></span>
-        </p>
-    </div>
+    <p
+      class="ion-no-margin ion-margin-vertical"
+      *ngFor="let text of message.messageText.split('|')"
+    >
+      <span [appTextWithLinks]="text"></span>
+    </p>
+  </div>
 </div>
