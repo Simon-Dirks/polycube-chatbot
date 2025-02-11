@@ -1,63 +1,77 @@
 <app-header-bar [pageTitle]="'ArtBot Guide'"></app-header-bar>
 
 <ion-content>
+  <!-- Chat Messages -->
+  <div class="chat-container">
+    <div class="chat-messages" #chatMessages>
+      <ion-grid>
+        <ion-row *ngIf="imageClassifier.loadingModel">
+          <ion-spinner class="ion-margin-right"></ion-spinner>
+          <em class="ion-margin-top loading-model-text">{{
+            imageClassifier.loadingModelStatus
+          }}</em>
+        </ion-row>
 
-    <!-- Chat Messages -->
-    <div class="chat-container">
-        <div class="chat-messages" #chatMessages>
-            <ion-grid>
-                <ion-row *ngIf="imageClassifier.loadingModel">
-                    <ion-spinner class="ion-margin-right"></ion-spinner>
-                    <em class="ion-margin-top loading-model-text">{{imageClassifier.loadingModelStatus}}</em>
-                </ion-row>
+        <ion-row>
+          <p
+            class="image-prediction-text"
+            *ngIf="imageClassifier.lastPrediction !== ''"
+          >
+            Image prediction: {{ imageClassifier.lastPrediction }}
+          </p>
+        </ion-row>
+        <ion-row
+          *ngFor="
+            let chatMessage of chat.chatMessages.getValue();
+            let messageIdx = index
+          "
+        >
+          <ion-col>
+            <app-chat-message-bubble
+              [messageIdx]="messageIdx"
+              [message]="chatMessage"
+            >
+            </app-chat-message-bubble>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="chat.typingBotMessage.getValue()">
+          <ion-col>
+            <div class="chat-message-bubble bot-chat-message-bubble">
+              <ion-spinner name="dots"></ion-spinner>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
 
-                <ion-row>
-                    <p class="image-prediction-text" *ngIf="imageClassifier.lastPrediction !== ''">
-                        Image prediction: {{imageClassifier.lastPrediction}}
-                    </p>
-
-                </ion-row>
-                <ion-row *ngFor="let chatMessage of chat.chatMessages.getValue(); let messageIdx = index">
-                    <ion-col>
-                        <app-chat-message-bubble [messageIdx]="messageIdx" [message]="chatMessage">
-                        </app-chat-message-bubble>
-                    </ion-col>
-                </ion-row>
-                <ion-row *ngIf="chat.typingBotMessage.getValue()">
-                    <ion-col>
-                        <div class="chat-message-bubble bot-chat-message-bubble">
-                            <ion-spinner name="dots"></ion-spinner>
-                        </div>
-                    </ion-col>
-                </ion-row>
-            </ion-grid>
-        </div>
-
-        <!-- Question Input -->
-        <div class="question-input-container" *ngIf="!imageClassifier.loadingModel">
-            <ion-button (click)="showCamPopup()"
+    <!-- Question Input -->
+    <div class="question-input-container" *ngIf="!imageClassifier.loadingModel">
+      <!-- <ion-button (click)="showCamPopup()"
                     *ngIf="!questions.filterInput"
                     class="photo-button"
                     fill="clear"
                     color="primary">
                 <ion-icon name="camera"></ion-icon>
-            </ion-button>
+            </ion-button> -->
 
-            <ion-searchbar [(ngModel)]="questions.filterInput" placeholder="Filter questions"></ion-searchbar>
+      <ion-searchbar
+        [(ngModel)]="questions.filterInput"
+        placeholder="Filter questions"
+      ></ion-searchbar>
 
-            <div class="questions-list">
-                <p class="ion-text-center" *ngIf="questions.getAllFilteredQuestions().length === 0">
-                    <em>
-                        No questions found...
-                    </em>
-                </p>
-                <app-question-option *ngFor="let question of questions.getAllFilteredQuestions()"
-                                     [question]="question">
-                </app-question-option>
-            </div>
-        </div>
+      <div class="questions-list">
+        <p
+          class="ion-text-center"
+          *ngIf="questions.getAllFilteredQuestions().length === 0"
+        >
+          <em> No questions found... </em>
+        </p>
+        <app-question-option
+          *ngFor="let question of questions.getAllFilteredQuestions()"
+          [question]="question"
+        >
+        </app-question-option>
+      </div>
     </div>
+  </div>
 </ion-content>
-
-
-
