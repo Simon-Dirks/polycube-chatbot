@@ -1,6 +1,6 @@
 A prototype chatbot with integrated PolyCube functionality (see https://github.com/danubevislab/polycubeViews).
 
-<img width="708" alt="image" src="https://github.com/user-attachments/assets/fd6f65a7-da54-45f9-b6fb-7a0ae32c8f61" />
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/fd6f65a7-da54-45f9-b6fb-7a0ae32c8f61" />
 
 
 ## To run
